@@ -1,6 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Overview.aspx.vb" Inherits="GrobOverview.Overview" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
 <script src="JQuery/js/jquery-1.7.1.min.js" type="text/javascript"></script>
@@ -83,7 +82,7 @@
 </head>
 <body>
    <form id="form1" runat="server">
-   <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="True"></asp:ScriptManager>
+   &nbsp;<asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="True"></asp:ScriptManager>
    
         <div id="content">
             <div id="leftContent">

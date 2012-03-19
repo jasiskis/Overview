@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Overview.aspx.cs" Inherits="GrobDashboard.Overview" %>
 <%@ Register tagPrefix="uc" tagName="maquina" src="UserControls/maquina.ascx" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script src="JQuery/js/jquery-1.7.1.min.js" type="text/javascript"></script>
