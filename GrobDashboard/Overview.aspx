@@ -42,9 +42,9 @@
             
             <div id="contentCentral">
                 <div id="contentMaquinas">
-                        <div class="maquinasDroppable"></div>
-                        <div class="maquinasDroppable"></div>
-                        <div class="maquinasDroppable"></div>
+                        <div class="maquinasDroppable" id="dropMaq1"></div>
+                        <div class="maquinasDroppable" id="dropMaq2"></div>
+                        <div class="maquinasDroppable" id="dropMaq3"></div>
                         <div class="maquinasDroppable"></div>
                         <div class="maquinasDroppable"></div>
                         <div class="maquinasDroppable"></div>

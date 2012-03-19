@@ -16,7 +16,7 @@ function instanciaObjetos() {
     });
 
     $('.maquinasDroppable').droppable({
-        accept: '.maquinaDrag',
+        accept: '.maquinaDrag , .containerMaquina',
         drop: dropMaquina
     });
 
@@ -25,6 +25,13 @@ function instanciaObjetos() {
         height: 250,
         width: 1250,
         position: ({ my: 'left', at: 'left bottom', of: $('#contentCentral') })
+    });
+    
+    $('.containerMaquina').draggable({
+        cursor: 'move',
+        containment: 'document',
+        snap: '.maquinasDroppable',
+        revert: true
     });
 
     $("#selectable").selectable({
@@ -43,16 +50,36 @@ function instanciaObjetos() {
     Eventos Drag and DROP
 */
 function dropMaquina(event, ui) {
-    var responsew = GeradorDeMaquina("RetriveWebControl", ["id", ui.draggable.attr('id')]);
+    if ($(ui.draggable).hasClass('maquinaDrag')) {
+        var responsew = GeradorDeMaquina("RetriveWebControl", ["id", ui.draggable.attr('id')]);
 
-    $(this).droppable('disable');
-    $(this).removeAttr('style');
-    $(this).addClass('maquinaSemDroppable');
-    $(this).append(responsew);
-    ui.draggable.css("background-color", "#CCC123");
-    ui.draggable.draggable('option', 'revert', false);
+        $(this).droppable('disable');
+        $(this).removeAttr('style');
+        $(this).addClass('maquinaSemDroppable');
+        $(this).append(responsew);
+        ui.draggable.css("background-color", "#CCC123");
+        ui.draggable.draggable('option', 'revert', false);
 
-    $(instanciaObjetos);
+        $(instanciaObjetos);
+    } else if ($(ui.draggable).hasClass('containerMaquina')) {
+        var responsew = GeradorDeMaquina("RetriveWebControl", ["id", ui.draggable.attr('idmaquina')]);
+
+        var idmaq = ui.draggable.attr('idmaquina');
+        $('[idmaquina]=' + idmaq).parent().droppable('enable');
+        $('[idmaquina]=' + idmaq).parent().removeClass('maquinaSemDroppable');
+        $('[idmaquina]=' + idmaq).parent().addClass('maquinasDroppable');
+        
+        
+        $(this).droppable('disable');
+        $(this).removeAttr('style');
+        $(this).addClass('maquinaSemDroppable');
+        $(this).append(responsew);
+        ui.draggable.css("background-color", "#CCC123");
+        ui.draggable.draggable('option', 'revert', false);
+        ui.draggable.remove();
+       
+        $(instanciaObjetos);
+    }
 }
 
 function objetoQueMostraEnquantoDragging(event) {

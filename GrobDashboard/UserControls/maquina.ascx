@@ -16,7 +16,7 @@
 .descMaquina{width: 50%;float: left;border-right:dotted 2px black; display:inline;}
 .graficosMaq{width: 45%;height:100%;float: right;displau: inline;}
 </style>
-<div class="containerMaquina">
+<div class="containerMaquina" idmaquina="<%=IdMauqina%>">
     <div class="imagemMaquina">   
         <img width="135px" height="135px" src="../Imagens/MaquinaVerde.png" onclick="abrePopUpInfo(<%=IdMauqina%>)"/>        
     </div>
