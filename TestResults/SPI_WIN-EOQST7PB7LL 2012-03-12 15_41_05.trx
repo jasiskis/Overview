@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="83af6afa-5b85-48f3-a2f6-c22fe97d232e" name="SPI@WIN-EOQST7PB7LL 2012-03-12 15:41:05" runUser="WIN-EOQST7PB7LL\SPI" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="00b9885c-2413-4db4-8cbe-db43164d2eb6">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="SPI_WIN-EOQST7PB7LL 2012-03-12 15_41_05">
+      <DeploymentItem filename="C:\Users\SPI\Documents\Visual Studio 2010\Projects\GrobOverview\GrobDashboard\bin\GrobDashboard.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\NUnit 2.6\bin\framework\nunit.framework.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\NUnit 2.6\bin\framework\nunit.mocks.dll" />
+      <DeploymentItem filename="C:\Users\SPI\Desktop\Developer\WatiN-2.1.0.1196\bin\net40\WatiN.Core.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-03-12T15:41:05.7798587-03:00" queuing="2012-03-12T15:41:12.8122609-03:00" start="2012-03-12T15:41:13.0832764-03:00" finish="2012-03-12T15:41:15.2023080-03:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="c:\users\spi\documents\visual studio 2010\projects\groboverview\test\bin\debug\test.dll" id="18d72485-cf26-bb96-917b-63a6147b7e77">
+      <Execution id="9eece5f4-fe50-45ca-93de-8251253ff3a1" />
+      <TestMethod codeBase="C:/Users/SPI/Documents/Visual Studio 2010/Projects/GrobOverview/Test/bin/Debug/Test.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test.Integrated.UnitTest1, Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="18d72485-cf26-bb96-917b-63a6147b7e77" executionId="9eece5f4-fe50-45ca-93de-8251253ff3a1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9eece5f4-fe50-45ca-93de-8251253ff3a1" testId="18d72485-cf26-bb96-917b-63a6147b7e77" testName="TestMethod1" computerName="WIN-EOQST7PB7LL" duration="00:00:00.0139375" startTime="2012-03-12T15:41:13.2572825-03:00" endTime="2012-03-12T15:41:15.0010549-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9eece5f4-fe50-45ca-93de-8251253ff3a1">
+    </UnitTestResult>
+  </Results>
+</TestRun>

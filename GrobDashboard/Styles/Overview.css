@@ -1,0 +1,44 @@
+﻿body{ border: 0;margin: 0;padding: 0; min-width: 1600px;}
+
+#content{ border: 0;margin:0; padding:0; width: 100%;height: 750px; min-height: 720px; max-height: 1020px; min-width:720px;max-width: 2000px;}
+
+#leftContent{padding: 15px; width: 20%;height: 100%;background-color: #999999;float: left;}
+
+#maquinasPlaceHolder{width: 100%;height: 60%;max-height: 61%; background-color: #CCCCCC;margin-bottom: 10px;padding: 3px;overflow: auto;}
+
+#seletorTipoMaquina{width: 100%; padding: 3px;background-color: #CCCCCC;margin-bottom: 10px;max-height: 20%;overflow: auto;}
+#seletorTipoMaquina input[type="checkbox"]{ margin-bottom: 1em;}
+
+#botoesPlaceHolder{ width: 100%; padding: 3px; background-color: #CCCCCC}
+#botoesPlaceHolder input[type=submit]{width: 49%}
+
+#contentCentral{margin: 0; padding: 15px; width: 76%;height: 100%;background-image: url("../Imagens/backgroundContentMaquina.gif");
+                background-repeat: repeat; border-left: solid 1px white;overflow: auto; }
+                
+#contentMaquinas{ padding: 5px;display: block;}
+                
+                
+#maquinasDr2oppable{ background-color: #333333;width: 170px;height: 170px; border-radius: 20px;}
+.maquinasDroppable{ width: 170px;height: 170px; border-radius: 20px;border-style: dashed;border-color: cadetblue;
+                    display: inline-table;margin: 5px;}
+.maquinaSemDroppable{ border-width: 0px;margin: 0px;margin-right: 6px;padding: 0;display: inline-table;opacity: 100;filter:alpha(opacity=100);}                    
+
+.maquinaDrag{ width: 100%;background-color: #006A00;font: bold 20px sans-serif; text-align: center;}
+.maquinaDragHelper{ width: 175px;height: 175px;  background-color: #006A00;font: bold 20px sans-serif; text-align: center;}
+
+#mais{ width: 163px;height: 164px; background-image:url("../Imagens/mais.jpg") }
+
+.maquinaDragHelper.ui-draggable-dragging {
+  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  c
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  border-radius: 20px;
+}
+
+
+
+#feedback {font-size: 1em; }
+#selectable .ui-selecting { background: #7Ab93D; }
+#selectable .ui-selected { background: #55A616; color: white; }
+#selectable {font-family: "arial";font-weight: bold; list-style-type: none; margin: 0; padding: 0; width: 100%; }
+#selectable li { margin: 3px; padding: 0.4em; font-size: 1em; height: 18px; }

@@ -1,0 +1,500 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="C1C53932-6520-446E-8B4E-28D9B172AD02/d:Properties/f:AssemblyInfo.cs" caret="0" fromTop="0" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx.designer.cs" caret="0" fromTop="0" />
+      <File id="C1C53932-6520-446E-8B4E-28D9B172AD02/d:TestAdd/f:Ul.cs" caret="436" fromTop="14" />
+      <File id="C1C53932-6520-446E-8B4E-28D9B172AD02/d:TestAdd/f:LiCollection.cs" caret="0" fromTop="0" />
+      <File id="C1C53932-6520-446E-8B4E-28D9B172AD02/d:TestAdd/f:Li.cs" caret="0" fromTop="0" />
+      <File id="C1C53932-6520-446E-8B4E-28D9B172AD02/d:Integrated/f:InteractionManager.cs" caret="1096" fromTop="18" />
+      <File id="C1C53932-6520-446E-8B4E-28D9B172AD02/d:TestAdd/f:IndexView.cs" caret="130" fromTop="4" />
+      <File id="C1C53932-6520-446E-8B4E-28D9B172AD02/d:Integrated/f:InteracaoTelaTest.cs" caret="1171" fromTop="46" />
+      <File id="C1C53932-6520-446E-8B4E-28D9B172AD02/d:Integrated/f:UnitTest1.cs" caret="0" fromTop="0" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:UserControls/f:maquina.ascx.designer.cs" caret="453" fromTop="12" />
+      <File id="C1C53932-6520-446E-8B4E-28D9B172AD02/d:Integrated/f:ApplicationRunner.cs" caret="521" fromTop="10" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:WebForm1.aspx" caret="1737" fromTop="48" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:UserControls/f:maquina.ascx.cs" caret="511" fromTop="17" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx.cs" caret="668" fromTop="13" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Styles/f:Overview.css" caret="1501" fromTop="2" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:UserControls/f:maquina.ascx" caret="1913" fromTop="29" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="4774" fromTop="17" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="2345" fromTop="5" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="3202" fromTop="7" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="4126" fromTop="30" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="3147" fromTop="7" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="1468" fromTop="21" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx.cs" caret="403" fromTop="7" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx.cs" caret="668" fromTop="13" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="1747" fromTop="17" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="1909" fromTop="7" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="2140" fromTop="24" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="7426" fromTop="1" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="1019" fromTop="10" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="398" fromTop="5" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="6628" fromTop="4" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="6628" fromTop="20" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="9403" fromTop="26" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:UserControls/f:maquina.ascx" caret="1029" fromTop="5" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="5364" fromTop="18" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="5364" fromTop="18" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="5186" fromTop="25" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:UserControls/f:maquina.ascx" caret="837" fromTop="10" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="1303" fromTop="22" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="6294" fromTop="26" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="4436" fromTop="13" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="5318" fromTop="20" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="6486" fromTop="29" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:UserControls/f:maquina.ascx" caret="1913" fromTop="29" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="5401" fromTop="6" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="4985" fromTop="25" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="4774" fromTop="17" />
+    </RecentEdits>
+  </RecentFiles>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="AspCodeCompletionContext">
+      <Item value="id" priority="100" />
+      <Item value="...follow_a_tab.27s_URL_instead_of_loading_its_content_via_ajax" priority="41" />
+      <Item value="div" priority="132" />
+      <Item value="maquinasPlaceHolder" priority="6" />
+      <Item value="script" priority="27" />
+      <Item value="asp" priority="27" />
+      <Item value="ScriptManager`0" priority="6" />
+      <Item value="EnablePartialRendering" priority="6" />
+      <Item value="ScriptMode" priority="6" />
+      <Item value="class" priority="64" />
+      <Item value="text/javascript" priority="13" />
+      <Item value="maquinaDrag" priority="41" />
+      <Item value="runat" priority="20" />
+      <Item value="server" priority="13" />
+      <Item value="display" priority="17" />
+      <Item value="label" priority="7" />
+      <Item value="CheckBox`0" priority="6" />
+      <Item value="ID" priority="13" />
+      <Item value="Text" priority="13" />
+      <Item value="ol" priority="6" />
+      <Item value="li" priority="6" />
+      <Item value="type" priority="34" />
+      <Item value="Button`0" priority="6" />
+      <Item value="input" priority="14" />
+      <Item value="button" priority="6" />
+      <Item value="value" priority="6" />
+      <Item value="onclick" priority="14" />
+      <Item value="click" priority="5" />
+      <Item value="hidden" priority="5" />
+      <Item value="selected" priority="5" />
+      <Item value="mousedown" priority="5" />
+      <Item value="style" priority="42" />
+      <Item value="img" priority="6" />
+      <Item value="height" priority="7" />
+      <Item value="Register" priority="6" />
+      <Item value="tagPrefix" priority="7" />
+      <Item value="tagName" priority="6" />
+      <Item value="src" priority="6" />
+      <Item value="UserControls" priority="6" />
+      <Item value="maquina.ascx" priority="6" />
+      <Item value="maquina" priority="21" />
+      <Item value="this" priority="9" />
+      <Item value="NomeMaquina" priority="14" />
+      <Item value="IdMauqina" priority="6" />
+      <Item value="Label`0" priority="6" />
+      <Item value="TextBox`0" priority="6" />
+      <Item value="width" priority="9" />
+      <Item value="padding" priority="9" />
+      <Item value="$" priority="7" />
+      <Item value="float" priority="9" />
+    </ItemStatistics>
+    <ItemStatistics item="CssCodeCompletionContext">
+      <Item value="content" priority="4" />
+      <Item value="border" priority="23" />
+      <Item value="margin" priority="29" />
+      <Item value="width" priority="46" />
+      <Item value="height" priority="73" />
+      <Item value="leftContent" priority="4" />
+      <Item value="background-color" priority="47" />
+      <Item value="padding" priority="28" />
+      <Item value="body" priority="5" />
+      <Item value="maquinasPlaceHolder" priority="9" />
+      <Item value="seletorTipoMaquina" priority="9" />
+      <Item value="padding-bottom" priority="17" />
+      <Item value="botoesPlaceHolder" priority="9" />
+      <Item value="contentCentral" priority="9" />
+      <Item value="background-repeat" priority="5" />
+      <Item value="repeat" priority="4" />
+      <Item value="float" priority="24" />
+      <Item value="display" priority="55" />
+      <Item value="left" priority="5" />
+      <Item value="repeat-x" priority="4" />
+      <Item value="min-height" priority="17" />
+      <Item value="max-width" priority="5" />
+      <Item value="maquinasDroppable" priority="4" />
+      <Item value="font" priority="5" />
+      <Item value="text-align" priority="17" />
+      <Item value="sans-serif" priority="9" />
+      <Item value="maquinaDrag" priority="14" />
+      <Item value="background-image" priority="5" />
+      <Item value="label" priority="5" />
+      <Item value="max-height" priority="31" />
+      <Item value="inline-block" priority="18" />
+      <Item value="list-item" priority="9" />
+      <Item value="table-column" priority="4" />
+      <Item value="flexbox" priority="16" />
+      <Item value="input" priority="17" />
+      <Item value="type" priority="17" />
+      <Item value="margin-bottom" priority="5" />
+      <Item value="margin-top" priority="3" />
+      <Item value="font-family" priority="17" />
+      <Item value="fantasy" priority="4" />
+      <Item value="monospace" priority="4" />
+      <Item value="drop-initial-after-align" priority="3" />
+      <Item value="overflow" priority="29" />
+      <Item value="scroll" priority="4" />
+      <Item value="min-width" priority="5" />
+      <Item value="font-style" priority="5" />
+      <Item value="font-weight" priority="3" />
+      <Item value="inline" priority="6" />
+      <Item value="contentMaquinas" priority="19" />
+      <Item value="div" priority="5" />
+      <Item value="border-style" priority="5" />
+      <Item value="dashed" priority="9" />
+      <Item value="border-color" priority="9" />
+      <Item value="brown" priority="4" />
+      <Item value="cadetblue" priority="6" />
+      <Item value="inline-table" priority="18" />
+      <Item value="darkgrey" priority="4" />
+      <Item value="opacity" priority="15" />
+      <Item value="containerMaquina" priority="4" />
+      <Item value="imagemMaquina" priority="9" />
+      <Item value="nomeMaquina" priority="5" />
+      <Item value="white" priority="6" />
+      <Item value="border-width" priority="5" />
+      <Item value="border-radius" priority="5" />
+      <Item value="color" priority="5" />
+      <Item value="img" priority="5" />
+      <Item value="center" priority="6" />
+      <Item value="margin-right" priority="3" />
+      <Item value="inputDraggable" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="JavaScriptSpecificContext">
+      <Item value="$" priority="202" />
+      <Item value="document" priority="10" />
+      <Item value="function" priority="94" />
+      <Item value="alert" priority="87" />
+      <Item value="fazAlgo" priority="21" />
+      <Item value="PageMethod" priority="10" />
+      <Item value="alerta" priority="21" />
+      <Item value="alerta2" priority="10" />
+      <Item value="handleDropEvent2" priority="10" />
+      <Item value="chamaEvento" priority="21" />
+      <Item value="ui" priority="32" />
+      <Item value="ChamaWebMethodNoAsp" priority="7" />
+      <Item value="resizeBy" priority="10" />
+      <Item value="response" priority="54" />
+      <Item value="geraMaquina" priority="10" />
+      <Item value="testaAjax" priority="10" />
+      <Item value="this" priority="21" />
+      <Item value="return" priority="21" />
+      <Item value="var" priority="21" />
+      <Item value="responsew" priority="32" />
+      <Item value="false" priority="21" />
+      <Item value="init" priority="10" />
+      <Item value="successFn" priority="10" />
+      <Item value="id" priority="21" />
+      <Item value="parseInt" priority="10" />
+      <Item value="drawChart" priority="10" />
+      <Item value="drawGauge" priority="10" />
+      <Item value="drawVisualization" priority="10" />
+      <Item value="true" priority="10" />
+      <Item value="ImageData" priority="10" />
+      <Item value="Math" priority="10" />
+    </ItemStatistics>
+    <ItemStatistics item="JavaScriptSpecificContextQualified">
+      <Item value="ready" priority="7" />
+      <Item value="css" priority="9" />
+      <Item value="append" priority="43" />
+      <Item value="droppables" priority="15" />
+      <Item value="click" priority="4" />
+      <Item value="select" priority="15" />
+      <Item value="hidden" priority="4" />
+      <Item value="selected" priority="4" />
+      <Item value="mousedown" priority="4" />
+      <Item value="mouseup" priority="7" />
+      <Item value="addClass" priority="28" />
+      <Item value="ID" priority="7" />
+      <Item value="getParameter" priority="15" />
+      <Item value="attr" priority="7" />
+      <Item value="random" priority="8" />
+    </ItemStatistics>
+    <ItemStatistics item="VBCodeCompletionContextSimple">
+      <Item value="Imports" priority="12" />
+      <Item value="System" priority="25" />
+      <Item value="Web" priority="11" />
+      <Item value="Script" priority="11" />
+      <Item value="ScriptManager`0" priority="11" />
+      <Item value="Me" priority="41" />
+      <Item value="Overview`0" priority="13" />
+      <Item value="PageAsyncTask`0" priority="13" />
+      <Item value="Dim" priority="13" />
+      <Item value="As" priority="13" />
+      <Item value="New" priority="13" />
+      <Item value="Page`0" priority="13" />
+      <Item value="page" priority="13" />
+      <Item value="Return" priority="13" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.UI.ScriptManager">
+      <Item value="RegisterClientScriptBlock`0" priority="11" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GrobOverview.Overview">
+      <Item value="GetType`0" priority="12" />
+    </ItemStatistics>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="using" priority="185" />
+      <Item value="NUnit" priority="150" />
+      <Item value="Framework" priority="107" />
+      <Item value="public" priority="255" />
+      <Item value="void" priority="191" />
+      <Item value="Test" priority="31" />
+      <Item value="var" priority="31" />
+      <Item value="new" priority="287" />
+      <Item value="IEnumerable" priority="26" />
+      <Item value="WatiN.Core" priority="60" />
+      <Item value="IE" priority="58" />
+      <Item value="browser" priority="405" />
+      <Item value="Assert`0" priority="63" />
+      <Item value="Is`0" priority="245" />
+      <Item value="Console`0" priority="26" />
+      <Item value="ContextMarshalException`0" priority="32" />
+      <Item value="contemAStringWatiNNaPagina" priority="32" />
+      <Item value="TestFixture" priority="31" />
+      <Item value="STAThread" priority="58" />
+      <Item value="InteracaoTelaTest`0" priority="31" />
+      <Item value="tela" priority="287" />
+      <Item value="aplicacao" priority="287" />
+      <Item value="TipoMaquinaInteracaoTest`0" priority="31" />
+      <Item value="ApplicationRunner" priority="58" />
+      <Item value="InteractionManager" priority="57" />
+      <Item value="private" priority="191" />
+      <Item value="sealed" priority="63" />
+      <Item value="InteractionManager`0" priority="31" />
+      <Item value="ApplicationRunner`0" priority="63" />
+      <Item value="this" priority="125" />
+      <Item value="Browser`0" priority="31" />
+      <Item value="findBy" priority="32" />
+      <Item value="nguid" priority="28" />
+      <Item value="Div`0" priority="95" />
+      <Item value="div" priority="117" />
+      <Item value="t" priority="90" />
+      <Item value="KeyValuePair" priority="26" />
+      <Item value="BaseElementCollection" priority="26" />
+      <Item value="SetUp" priority="58" />
+      <Item value="textoDoDiv" priority="59" />
+      <Item value="Page`0" priority="31" />
+      <Item value="SelectList`0" priority="26" />
+      <Item value="list" priority="63" />
+      <Item value="optionCollection" priority="31" />
+      <Item value="Element`0" priority="31" />
+      <Item value="ol" priority="31" />
+      <Item value="ul" priority="31" />
+      <Item value="index" priority="31" />
+      <Item value="li" priority="63" />
+      <Item value="Document`0" priority="31" />
+      <Item value="TearDown" priority="26" />
+      <Item value="null" priority="63" />
+      <Item value="int" priority="63" />
+      <Item value="NomeMaquina" priority="63" />
+      <Item value="if" priority="95" />
+      <Item value="IsPostBack" priority="95" />
+      <Item value="ViewState" priority="31" />
+      <Item value="lblNomeMauqina" priority="31" />
+      <Item value="else" priority="31" />
+      <Item value="lblNomeMaquina" priority="31" />
+      <Item value="System" priority="57" />
+      <Item value="Web" priority="53" />
+      <Item value="ApplicationException`0" priority="22" />
+      <Item value="Services" priority="26" />
+      <Item value="WebMethod" priority="26" />
+      <Item value="string" priority="90" />
+      <Item value="Page" priority="60" />
+      <Item value="UserControl`0" priority="64" />
+      <Item value="pg" priority="95" />
+      <Item value="path" priority="31" />
+      <Item value="control" priority="255" />
+      <Item value="StringWriter" priority="28" />
+      <Item value="HttpApplication`0" priority="31" />
+      <Item value="HttpContext`0" priority="26" />
+      <Item value="output" priority="63" />
+      <Item value="return" priority="31" />
+      <Item value="maquina`0" priority="31" />
+      <Item value="InsufficientExecutionStackException`0" priority="31" />
+      <Item value="IdMauqina" priority="53" />
+      <Item value="Random`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="That`0" priority="80" />
+      <Item value="True`0" priority="45" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Is">
+      <Item value="EqualTo`0" priority="76" />
+      <Item value="True" priority="53" />
+      <Item value="StringMatching`0" priority="50" />
+      <Item value="StringContaining`0" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WatiN.Core.IE">
+      <Item value="ContainsText`0" priority="26" />
+      <Item value="WaitForComplete`0" priority="53" />
+      <Item value="WaitUntilContainsText`0" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Test.Integrated.InteractionManager">
+      <Item value="aplicacao" priority="26" />
+      <Item value="clicaNoPrimeiroTipoDeMaquina`0" priority="26" />
+      <Item value="checaSeApareceuMaquinaNoMenu`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Test.Integrated.ApplicationRunner">
+      <Item value="getBrowser" priority="54" />
+      <Item value="Fecha`0" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WatiN.Core.Browser">
+      <Item value="Button`0" priority="26" />
+      <Item value="FindText`0" priority="26" />
+      <Item value="Div`0" priority="49" />
+      <Item value="Element`0" priority="45" />
+      <Item value="SelectList`0" priority="22" />
+      <Item value="ElementsWithTag`0" priority="26" />
+      <Item value="Close`0" priority="26" />
+      <Item value="ShowWindow`0" priority="26" />
+      <Item value="WaitForComplete`0" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@WatiN.Core.Find">
+      <Item value="ByName`0" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WatiN.Core.Button">
+      <Item value="Click`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WatiN.Core.Div">
+      <Item value="Text" priority="26" />
+      <Item value="Click`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Contains`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WatiN.Core.Element">
+      <Item value="ClickNoWait`0" priority="50" />
+      <Item value="MouseUp`0" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WatiN.Core.SelectList">
+      <Item value="Options" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WatiN.Core.Option">
+      <Item value="Text" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:LiteMedia.WatinExtension.WebTests.Ul">
+      <Item value="Items" priority="81" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Test.TestAdd.IndexView">
+      <Item value="TipoMaquina" priority="54" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:LiteMedia.WatinExtension.WebTests.Li">
+      <Item value="Click`0" priority="53" />
+      <Item value="FireEvent`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@WatiN.Core.Native.Windows.NativeMethods">
+      <Item value="WindowShowStyle`0" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@WatiN.Core.Native.Windows.NativeMethods+WindowShowStyle">
+      <Item value="Maximize" priority="26" />
+      <Item value="ShowMaximized" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ASP.usercontrols_maquina_ascx">
+      <Item value="NomeMaquina" priority="23" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.UI.WebControls.Label">
+      <Item value="Text" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GrobDashboard.UserControls.maquina">
+      <Item value="NomeMaquina" priority="80" />
+      <Item value="IdMauqina" priority="26" />
+      <Item value="setaDados`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="ToString`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.UI.WebControls.TextBox">
+      <Item value="Text" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.UI.Page">
+      <Item value="LoadControl`0" priority="26" />
+      <Item value="Controls" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.UI.ControlCollection">
+      <Item value="Add`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.HttpContext">
+      <Item value="Current" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.HttpContext">
+      <Item value="Server" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.HttpServerUtility">
+      <Item value="Execute`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StringWriter">
+      <Item value="ToString`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.UI.UserControl">
+      <Item value="Attributes" priority="49" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@GrobDashboard.UserControls.maquina">
+      <Item value="ReadStringResource`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Int32">
+      <Item value="Parse`0" priority="26" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.6\bin\net-2.0\lib</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <UnitTestSessions>
+    <Session>
+      <Name>Session #1</Name>
+      <Elements>
+        <UnitTestElement Provider="nUnit" Id="Test.Integrated.InteracaoTelaTest" type="NUnitTestFixtureElement" Project="C1C53932-6520-446E-8B4E-28D9B172AD02" />
+        <UnitTestElement Provider="nUnit" Id="Test.Integrated.InteracaoTelaTest.ClicaEArrastaMaquinaEChecaSeApareceuMaquina" ParentId="Test.Integrated.InteracaoTelaTest" type="NUnitTestElement" TypeName="Test.Integrated.InteracaoTelaTest" MethodName="ClicaEArrastaMaquinaEChecaSeApareceuMaquina" Project="C1C53932-6520-446E-8B4E-28D9B172AD02" />
+        <UnitTestElement Provider="nUnit" Id="Test.Integrated.InteracaoTelaTest.ClicaEmUmTipoDeMaquinaEApareceUmaMaquinaNoMenu" ParentId="Test.Integrated.InteracaoTelaTest" type="NUnitTestElement" TypeName="Test.Integrated.InteracaoTelaTest" MethodName="ClicaEmUmTipoDeMaquinaEApareceUmaMaquinaNoMenu" Project="C1C53932-6520-446E-8B4E-28D9B172AD02" />
+      </Elements>
+    </Session>
+    <Session>
+      <Name>Session #2</Name>
+      <Elements>
+        <UnitTestElement Provider="nUnit" Id="Test.Integrated.InteracaoTelaTest" type="NUnitTestFixtureElement" Project="C1C53932-6520-446E-8B4E-28D9B172AD02" />
+        <UnitTestElement Provider="nUnit" Id="Test.Integrated.InteracaoTelaTest.ClicaEArrastaMaquinaEChecaSeApareceuMaquina" ParentId="Test.Integrated.InteracaoTelaTest" type="NUnitTestElement" TypeName="Test.Integrated.InteracaoTelaTest" MethodName="ClicaEArrastaMaquinaEChecaSeApareceuMaquina" Project="C1C53932-6520-446E-8B4E-28D9B172AD02" />
+        <UnitTestElement Provider="nUnit" Id="Test.Integrated.InteracaoTelaTest.ClicaEmUmTipoDeMaquinaEApareceUmaMaquinaNoMenu" ParentId="Test.Integrated.InteracaoTelaTest" type="NUnitTestElement" TypeName="Test.Integrated.InteracaoTelaTest" MethodName="ClicaEmUmTipoDeMaquinaEApareceUmaMaquinaNoMenu" Project="C1C53932-6520-446E-8B4E-28D9B172AD02" />
+      </Elements>
+    </Session>
+    <Session>
+      <Name>Session #3</Name>
+      <Elements>
+        <UnitTestElement Provider="nUnit" Id="Test.Integrated.InteracaoTelaTest" type="NUnitTestFixtureElement" Project="C1C53932-6520-446E-8B4E-28D9B172AD02" />
+        <UnitTestElement Provider="nUnit" Id="Test.Integrated.InteracaoTelaTest.ClicaEArrastaMaquinaEChecaSeApareceuMaquina" ParentId="Test.Integrated.InteracaoTelaTest" type="NUnitTestElement" TypeName="Test.Integrated.InteracaoTelaTest" MethodName="ClicaEArrastaMaquinaEChecaSeApareceuMaquina" Project="C1C53932-6520-446E-8B4E-28D9B172AD02" />
+        <UnitTestElement Provider="nUnit" Id="Test.Integrated.InteracaoTelaTest.ClicaEmUmTipoDeMaquinaEApareceUmaMaquinaNoMenu" ParentId="Test.Integrated.InteracaoTelaTest" type="NUnitTestElement" TypeName="Test.Integrated.InteracaoTelaTest" MethodName="ClicaEmUmTipoDeMaquinaEApareceUmaMaquinaNoMenu" Project="C1C53932-6520-446E-8B4E-28D9B172AD02" />
+      </Elements>
+    </Session>
+  </UnitTestSessions>
+</Configuration>
