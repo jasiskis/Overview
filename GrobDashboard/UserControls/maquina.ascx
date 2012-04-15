@@ -25,11 +25,12 @@
 </div>
 <div id="dialog-maquina<%=IdMauqina%>" class="dialog-maquina" title="Máquina <%=IdMauqina%>">
     <div class="descMaquina">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vestibulum molestie risus, <br/>
-        eget tincidunt est iaculis id. Phasellus sed tempor mauris. Donec quis leo tortor. <br/>
-        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. <br/>
-        Sed a nisi magna. Fusce nibh sem, ultrices et facilisis quis, luctus sit amet neque. <br/>
-        In fringilla risus elit, nec fermentum nibh.<br/>
+        <b>Informações:</b><br/>
+        Status: Operando <br/>
+        Ordem Produção: 12345<br/>
+        Cliente: Teste <br/>
+        Data Início: 01/01/1990 <br/>
+        Última Parada: Manutenção <br />
     </div>
     <div class="graficosMaq">
            <div id="chart_div<%=IdMauqina%>" style="float: left;"></div>

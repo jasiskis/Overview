@@ -6,13 +6,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Services;
+using GrobDashboard.Context;
+using GrobDashboard.Domain;
 using GrobDashboard.UserControls;
 
 namespace GrobDashboard
 {
     public partial class Overview : System.Web.UI.Page
     {
-        
+        private GrobContext db = new GrobContext();
+   
         [WebMethod]
         public static string RetriveWebControl(String id)
         {
@@ -30,6 +33,11 @@ namespace GrobDashboard
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            List<TipoMaquina> listTiposMaquinas = db.TipoMaquinas.OrderBy(tp => tp.Desc).ToList();
+
+            tiposMaquina.DataSource = listTiposMaquinas;
+            tiposMaquina.DataBind();
+
             
         }
     }

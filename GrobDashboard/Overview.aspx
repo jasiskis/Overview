@@ -22,11 +22,13 @@
              <div id="leftContent">
                 <div id="seletorTipoMaquina">
 
-                   <ul id="selectable">
-                        <li id="tipoMaquina1" class="ui-widget-content">Tipo de Máquina 1</li>
-                        <li class="ui-widget-content">Tipo de Máquina 2</li>
-                        <li class="ui-widget-content">Tipo de Máquina 3</li>
-                        <li class="ui-widget-content">Tipo de Máquina 4</li>                        
+                   <ul id="selectable">              
+                        <asp:Repeater ID="tiposMaquina" runat="server">
+                            <ItemTemplate>                          
+                                <li id="<%#DataBinder.Eval(Container.DataItem,"Id")%>" 
+                                class="ui-widget-content"><%#DataBinder.Eval(Container.DataItem,"Desc")%></li>                           
+                            </ItemTemplate>
+                        </asp:Repeater>     
                    </ul>
 
                 </div>
@@ -42,9 +44,9 @@
             
             <div id="contentCentral">
                 <div id="contentMaquinas">
-                        <div class="maquinasDroppable" id="dropMaq1"></div>
-                        <div class="maquinasDroppable" id="dropMaq2"></div>
-                        <div class="maquinasDroppable" id="dropMaq3"></div>
+                        <div class="maquinasDroppable"></div>
+                        <div class="maquinasDroppable"></div>
+                        <div class="maquinasDroppable"></div>
                         <div class="maquinasDroppable"></div>
                         <div class="maquinasDroppable"></div>
                         <div class="maquinasDroppable"></div>

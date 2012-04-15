@@ -26,7 +26,7 @@ namespace Test.Integrated
             Li li = index.TipoMaquina.Items[0];
             browser.Eval("$('#selectable').data('selectable')._mouseStop(null)");
         }
-        
+
         public void checaSeApareceuMaquinaNoMenu()
         {
             Div div = browser.Div("maquina1");
@@ -43,6 +43,24 @@ namespace Test.Integrated
         public void checaSeAMaquinaFoiCriada()
         {
             throw new NotImplementedException();
+        }
+
+        public void selecionaItemNoCombo()
+        {
+            SelectList combo = browser.SelectList("combo123");
+            combo.SelectByValue("Afonso");
+        }
+
+        public void clicanoBotao()
+        {
+            browser.Button("botao").Click();
+        }
+
+        public void checaTexto()
+        {
+            Div div = browser.Div("div");
+            string text = div.Text;
+            Assert.That(text, Is.EqualTo("Afonso"));
         }
     }
 }

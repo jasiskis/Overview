@@ -65,9 +65,9 @@ function dropMaquina(event, ui) {
         var responsew = GeradorDeMaquina("RetriveWebControl", ["id", ui.draggable.attr('idmaquina')]);
 
         var idmaq = ui.draggable.attr('idmaquina');
-        $('[idmaquina]=' + idmaq).parent().droppable('enable');
-        $('[idmaquina]=' + idmaq).parent().removeClass('maquinaSemDroppable');
-        $('[idmaquina]=' + idmaq).parent().addClass('maquinasDroppable');
+        $('[idmaquina=' + idmaq +']').parent().droppable('enable');
+        $('[idmaquina=' + idmaq + ']').parent().removeClass('maquinaSemDroppable');
+        $('[idmaquina=' + idmaq + ']').parent().addClass('maquinasDroppable');
         
         
         $(this).droppable('disable');

@@ -10,3 +10,18 @@ C:\Users\SPI\Documents\Visual Studio 2010\Projects\GrobOverview\Test\obj\Debug\T
 C:\Users\SPI\Documents\Visual Studio 2010\Projects\GrobOverview\Test\obj\Debug\Test.pdb
 C:\Users\SPI\Documents\Visual Studio 2010\Projects\GrobOverview\Test\bin\Debug\GrobDashboard.dll
 C:\Users\SPI\Documents\Visual Studio 2010\Projects\GrobOverview\Test\bin\Debug\GrobDashboard.pdb
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\Test\bin\Debug\Test.dll
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\Test\bin\Debug\Test.pdb
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\Test\bin\Debug\GrobDashboard.dll
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\Test\bin\Debug\nunit.framework.dll
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\Test\bin\Debug\nunit.mocks.dll
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\Test\bin\Debug\WatiN.Core.dll
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\Test\bin\Debug\GrobDashboard.pdb
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\Test\bin\Debug\nunit.framework.xml
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\Test\bin\Debug\WatiN.Core.xml
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\Test\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\Test\obj\Debug\Test.dll
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\Test\obj\Debug\Test.pdb
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\Test\bin\Debug\Test.dll.config
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\Test\bin\Debug\EntityFramework.dll
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\Test\bin\Debug\EntityFramework.xml

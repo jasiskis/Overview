@@ -19,7 +19,7 @@ namespace Test.Integrated
             tela = new InteractionManager(aplicacao);
         }
 
-  
+
         [Test]
         [STAThread]
         public void ClicaEmUmTipoDeMaquinaEApareceUmaMaquinaNoMenu()
@@ -28,6 +28,16 @@ namespace Test.Integrated
             tela.checaSeApareceuMaquinaNoMenu();
 
         }
+
+        [Test]
+        [STAThread]
+        public  void SelecionaItemComboClicaNoBotaoEChecaTexto()
+        {
+            tela.selecionaItemNoCombo();
+            tela.clicanoBotao();
+            tela.checaTexto();
+        }
+
         [Test]
         [STAThread]
         public void ClicaEArrastaMaquinaEChecaSeApareceuMaquina(){

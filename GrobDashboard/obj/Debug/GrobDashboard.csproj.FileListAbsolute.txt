@@ -8,3 +8,5 @@ C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\GrobDashboard\bin\GrobDashboard.
 C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\GrobDashboard\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\GrobDashboard\obj\Debug\GrobDashboard.dll
 C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\GrobDashboard\obj\Debug\GrobDashboard.pdb
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\GrobDashboard\bin\EntityFramework.dll
+C:\Users\SPI\Desktop\Projetos\GROB\GrobOverview\GrobDashboard\bin\EntityFramework.xml
