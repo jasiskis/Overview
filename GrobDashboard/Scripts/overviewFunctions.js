@@ -34,13 +34,19 @@ function instanciaObjetos() {
         revert: true
     });
 
-    $("#selectable").selectable({
-        stop: function () {
-            var id = Math.floor(Math.random() * 101);
-            $("#maquinasPlaceHolder").prepend('<div id="' + id + '" class="maquinaDrag">Máquina ' + id + '</div>');
-            $(instanciaObjetos);
-        }
+    $("#selectable").selectable();
+    $("#selectable").bind("selectablestop", function (event) {
+        var result = "";
+        $(".ui-selected", this).each(function () {
+            result += this.getAttribute("idtipomaquina") + ";";
+        });
+
+         CarregaMaquinasDoTipo("CarregaTiposMaquina", ["ids", result]);
     });
+
+
+    
+    
     $(".botao").button();
 }
 // ############################################################################
@@ -83,7 +89,7 @@ function dropMaquina(event, ui) {
 }
 
 function objetoQueMostraEnquantoDragging(event) {
-    return '<div class="maquinaDragHelper">Máquina ' + $(this).attr("id") + '</div>';
+    return '<div class="maquinaDragHelper">'+ $(this).attr("descricao") + '</div>';
 }
 
 
@@ -118,6 +124,37 @@ function ChamaWebMethodNoAsp(fn, paramArray, successFn, errorFn) {
         dataType: "json",
         success: successFn,
         error: errorFn
+    });
+}
+
+function CarregaMaquinasDoTipo(fn, paramArray) {
+    var pagePath = window.location.pathname;
+    var htmlGeradoDaMaquina;
+    //Create list of parameters in the form:
+    //{"paramName1":"paramValue1","paramName2":"paramValue2"}
+    var paramList = '';
+    if (paramArray.length > 0) {
+        for (var i = 0; i < paramArray.length; i += 2) {
+            if (paramList.length > 0) paramList += ',';
+            paramList += '"' + paramArray[i] + '":"' + paramArray[i + 1] + '"';
+        }
+    }
+    paramList = '{' + paramList + '}';
+    //Call the page method
+    $.ajax({
+        type: "POST",
+        url: pagePath + "/" + fn,
+        contentType: "application/json; charset=utf-8",
+        data: paramList,
+        async: false,
+        dataType: "json",
+        success: function (response) {
+            $("#maquinasPlaceHolder").empty();
+            for (var i = 0; i < response.d.length; i++) {
+                $("#maquinasPlaceHolder").prepend('<div id="' + response.d[i].Id + '" descricao="'+ response.d[i].Desc +'" class="maquinaDrag">' + response.d[i].Nome + '</div>');
+            }
+            $(instanciaObjetos);
+        }
     });
 }
 

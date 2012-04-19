@@ -18,22 +18,23 @@
    <form id="form1" runat="server">
    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="True"></asp:ScriptManager>
    
+   
         <div id="content">
-             <div id="leftContent">
+               <div id="leftContent">
                 <div id="seletorTipoMaquina">
 
                    <ul id="selectable">              
                         <asp:Repeater ID="tiposMaquina" runat="server">
                             <ItemTemplate>                          
-                                <li id="<%#DataBinder.Eval(Container.DataItem,"Id")%>" 
+                                <li idtipomaquina="<%#DataBinder.Eval(Container.DataItem,"Id")%>" 
                                 class="ui-widget-content"><%#DataBinder.Eval(Container.DataItem,"Desc")%></li>                           
                             </ItemTemplate>
                         </asp:Repeater>     
                    </ul>
 
                 </div>
-                <div id="maquinasPlaceHolder">                   
-                 
+                <div id="maquinasPlaceHolder">                  
+                      
                 </div>
 
                 <div id="botoesPlaceHolder">
