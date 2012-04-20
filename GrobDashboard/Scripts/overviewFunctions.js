@@ -43,9 +43,6 @@ function instanciaObjetos() {
 
          CarregaMaquinasDoTipo("CarregaTiposMaquina", ["ids", result]);
     });
-
-
-    
     
     $(".botao").button();
 }
@@ -89,7 +86,7 @@ function dropMaquina(event, ui) {
 }
 
 function objetoQueMostraEnquantoDragging(event) {
-    return '<div class="maquinaDragHelper">'+ $(this).attr("descricao") + '</div>';
+    return '<div class="maquinaDragHelper"><div class="middle"><div class="texto">'+ $(this).attr("descricao") + '</div></div></div>';
 }
 
 
@@ -151,7 +148,7 @@ function CarregaMaquinasDoTipo(fn, paramArray) {
         success: function (response) {
             $("#maquinasPlaceHolder").empty();
             for (var i = 0; i < response.d.length; i++) {
-                $("#maquinasPlaceHolder").prepend('<div id="' + response.d[i].Id + '" descricao="'+ response.d[i].Desc +'" class="maquinaDrag">' + response.d[i].Nome + '</div>');
+                $("#maquinasPlaceHolder").prepend('<div id="' + response.d[i].Id + '" descricao="'+ response.d[i].Desc +'" class="maquinaDrag">' + response.d[i].Desc + '</div>');
             }
             $(instanciaObjetos);
         }

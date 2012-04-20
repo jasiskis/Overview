@@ -25,7 +25,7 @@ namespace GrobDashboard
             string path = @"\UserControls\maquina.ascx";
             maquina control = (maquina) pg.LoadControl(path);
             control.NomeMaquina = "Maquina "+id;
-            control.IdMauqina = int.Parse(id);
+            control.IdMaquina = int.Parse(id);
             control.setaDados();
             pg.Controls.Add(control);
             StringWriter output = new StringWriter();

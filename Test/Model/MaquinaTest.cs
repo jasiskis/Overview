@@ -41,6 +41,18 @@ namespace Test.Model
             
             Assert.That(listMaquinas.Count, Is.GreaterThan(0));
         }
+
+        [Test]
+        public void
+            PegaInformacoesMaquinaPorMaquina()
+        {
+            List<Maquina> lista;
+            lista = db.Maquinas.ToList();
+
+            InformacoesMaquina info = db.InformacoesMaquinas.Find(lista[0].Id);
+
+           Assert.That(info, Is.Not.Null);
+        }
     }
    
 }

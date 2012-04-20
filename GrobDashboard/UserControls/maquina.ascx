@@ -16,24 +16,26 @@
 .descMaquina{width: 50%;float: left;border-right:dotted 2px black; display:inline;}
 .graficosMaq{width: 45%;height:100%;float: right;displau: inline;}
 </style>
-<div class="containerMaquina" idmaquina="<%=IdMauqina%>">
+<div class="containerMaquina" idmaquina="<%=IdMaquina%>">
     <div class="imagemMaquina">   
-        <img width="135px" height="135px" src="../Imagens/MaquinaVerde.png" onclick="abrePopUpInfo(<%=IdMauqina%>)"/>        
+        <img width="135px" height="135px" src="../Imagens/MaquinaVerde.png" onclick="abrePopUpInfo(<%=IdMaquina%>)"/>        
     </div>
 
     <div class="nomeMaquina"><asp:Label id="lblNomeMaquina" runat="server"></asp:Label></div>
 </div>
-<div id="dialog-maquina<%=IdMauqina%>" class="dialog-maquina" title="Máquina <%=IdMauqina%>">
+<div id="dialog-maquina<%=IdMaquina%>" class="dialog-maquina" title="<%=NomeMaquina%>">
     <div class="descMaquina">
         <b>Informações:</b><br/>
-        Status: Operando <br/>
-        Ordem Produção: 12345<br/>
-        Cliente: Teste <br/>
-        Data Início: 01/01/1990 <br/>
-        Última Parada: Manutenção <br />
+        Projeto: Operando <br/>
+        Cliente: 12345<br/>
+        ID Stamm: Teste <br/>
+        Ordem: 01/01/1990 <br/>
+        Confirmação: Manutenção <br />
+        Confirmação: Operação <br />
+        Início da Operação: 12/12/2012 12:12 <br />
     </div>
     <div class="graficosMaq">
-           <div id="chart_div<%=IdMauqina%>" style="float: left;"></div>
-           <div id="paradas_div<%=IdMauqina%>"style="float: right;"></div>
+           <div id="chart_div<%=IdMaquina%>" style="float: left;"></div>
+           <div id="paradas_div<%=IdMaquina%>"style="float: right;"></div>
     </div>
 </div>

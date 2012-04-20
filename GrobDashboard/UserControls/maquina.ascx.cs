@@ -4,35 +4,32 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using GrobDashboard.Context;
+using GrobDashboard.Domain;
 
 namespace GrobDashboard.UserControls
 {
     public partial class maquina : System.Web.UI.UserControl
     {
-        private String _nomeMaquina;
-        private int _idMauqina;
+        public String NomeMaquina { get; set; }
+        public int IdMaquina { get; set; }
+        public Maquina OMaquina { get; set;}
+        
 
+        private GrobContext db = new GrobContext();
+        
         public void setaDados()
         {
-            lblNomeMaquina.Text = this._nomeMaquina;
+            lblNomeMaquina.Text = this.NomeMaquina;
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblNomeMaquina.Text = this._nomeMaquina;
-        }
-        
+            OMaquina = db.Maquinas.Find(IdMaquina);
+            NomeMaquina = OMaquina.Nome;
 
-        public string NomeMaquina
-        {
-            get { return _nomeMaquina; }
-            set { _nomeMaquina = value; }
+            lblNomeMaquina.Text = OMaquina.Nome;
         }
 
-        public int IdMauqina
-        {
-            get { return _idMauqina; }
-            set { _idMauqina = value; }
-        }
     }
 }
