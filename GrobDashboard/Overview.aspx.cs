@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Script.Services;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.Services;
 using GrobDashboard.Context;
@@ -19,15 +20,42 @@ namespace GrobDashboard
         private GrobContext db = new GrobContext();
 
         [WebMethod]
+        public static string RetornaValoresGraficoParadas(int id, int dias)
+        {
+            GrobContext db = new GrobContext();
+            DateTime dateTime = DateTime.Now.AddDays(-dias);
+
+            List<IGrouping<int?, ParadasMaquina>> paradasMaquinas =
+                db.ParadasMaquinas.Where(m => m.IdMaquina == id  &&
+                    m.DataInicio > dateTime).GroupBy(m => m.IdMotivo1).ToList();
+            String valoresGraf = "";
+            foreach (var paradasMaquina in paradasMaquinas)
+            {
+                String key = paradasMaquina.Key.ToString();
+                if (key.Equals(""))
+                {
+                    key = "Sem Motivo";
+                }
+                String count = paradasMaquina.Count().ToString();
+                valoresGraf = valoresGraf + key + ":" + count + ';';
+            }
+            return valoresGraf;
+        }
+
+        [WebMethod]
         public static string RetriveWebControl(String id)
         {
             Page pg = new Page();
+            pg.EnableEventValidation = false;
+            HtmlForm htmlForm = new HtmlForm();
+            pg.Controls.Add(htmlForm);
+
             string path = @"\UserControls\maquina.ascx";
             maquina control = (maquina) pg.LoadControl(path);
             control.NomeMaquina = "Maquina "+id;
             control.IdMaquina = int.Parse(id);
             control.setaDados();
-            pg.Controls.Add(control);
+            htmlForm.Controls.Add(control);
             StringWriter output = new StringWriter();
             HttpContext.Current.Server.Execute(pg, output, true);
             return output.ToString();

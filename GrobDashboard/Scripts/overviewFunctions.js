@@ -22,7 +22,7 @@ function instanciaObjetos() {
 
     $('.dialog-maquina').dialog({
         autoOpen: false,
-        height: 250,
+        height: 300,
         width: 1250,
         position: ({ my: 'left', at: 'left bottom', of: $('#contentCentral') })
     });
@@ -190,8 +190,9 @@ function GeradorDeMaquina(fn, paramArray) {
 */
 
 function abrePopUpInfo(id) {
-    drawChart(id);
-    drawVisualization(id);
+    populaGaugeDiponibilidade(id,0);
+    geraGraficos(id, 7);
+    $('.dialog-maquina').dialog('close');
     $('#dialog-maquina' + id).dialog('open');
 }
 
@@ -201,11 +202,45 @@ function abrePopUpInfo(id) {
 
    ###################################################################
 */
+
+function geraGraficos(maq, dias) {
+    
+    //Se for  == 0 é porque veio do evento change lá no UserControl, se não veio de alguma chama desse .js
+    if(dias == 0)
+    {
+      dias = event.target.value;  
+    }
+
+    //*******************************
+    //Pega Valores das paradas de máquina do WebMethod na Overview.aspx.cs
+    //*******************************
+    var pagePath = window.location.pathname;
+    var dadosGrafico;
+    //Create list of parameters in the form:
+    //{"paramName1":"paramValue1","paramName2":"paramValue2"}
+    var paramList = '';
+    paramList = '{"id":"'+maq+'","dias":"'+dias+'"}';
+    //Call the page method
+    $.ajax({
+        type: "POST",
+        url: pagePath + "/RetornaValoresGraficoParadas",
+        contentType: "application/json; charset=utf-8",
+        data: paramList,
+        async: false,
+        dataType: "json",
+        success: function (response) {
+            dadosGrafico = response.d;
+        }
+    });
+    //Chama Função que tem os comando do google para gerar o gráfico
+    populaGraficoDeParadas(maq, dadosGrafico);
+}
+
 google.load('visualization', '1', { packages: ['gauge'] });
 google.load('visualization', '1', { packages: ['corechart'] });
-google.setOnLoadCallback(drawChart);
+google.setOnLoadCallback(populaGaugeDiponibilidade);
 
-function drawChart(id) {
+function populaGaugeDiponibilidade(id, dadosGrafico) {
     var porcDisponibilidade = Math.floor(Math.random() * 101);
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Label');
@@ -226,22 +261,26 @@ function drawChart(id) {
     chart.draw(data, options);
 }
 
-function drawVisualization(id) {
+function populaGraficoDeParadas(id, dadosGrafico) {
     // Create and populate the data table.
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Parada');
     data.addColumn('number', 'Minutos');
-    data.addRows(5);
-    data.setValue(0, 0, 'Manutenção');
-    data.setValue(0, 1, 200);
-    data.setValue(1, 0, 'Falha');
-    data.setValue(1, 1, 120);
-    data.setValue(2, 0, 'Problema');
-    data.setValue(2, 1, 80);
-    data.setValue(3, 0, 'Projeto');
-    data.setValue(3, 1, 40);
-    data.setValue(4, 0, 'Almoço');
-    data.setValue(4, 1, 30);
+
+    var split = dadosGrafico.split(";");
+
+    if (!(split.length == 1  && split[0] == "")) {
+        data.addRows(split.length);
+        for (var i = 0; i < split.length; i++) {
+            var dados = split[i].split(":");
+            data.setValue(i, 0, dados[0]);
+            data.setValue(i, 1, parseInt(dados[1]));
+        }
+    }else {
+        data.addRows(1);
+        data.setValue(0, 0, "Sem Dados");
+        data.setValue(0, 1, 100);
+    }
 
     var options = {
         title: 'Top 5 Paradas',

@@ -49,9 +49,49 @@ namespace Test.Model
             List<Maquina> lista;
             lista = db.Maquinas.ToList();
 
-            InformacoesMaquina info = db.InformacoesMaquinas.Find(lista[0].Id);
+            List<InformacoesMaquina> informacoesMaquinas = db.InformacoesMaquinas.Where(info => info.IdMaquina == 110).ToList();
 
-           Assert.That(info, Is.Not.Null);
+            Assert.That(informacoesMaquinas, Is.Not.Null);
+        }
+
+        [Test] public void
+               PegaStatusDaMaquina()
+        {
+            Maquina maquina = db.Maquinas.Find(11);
+            Assert.That(maquina.Status(), Is.EqualTo("Ativa"));
+
+            maquina = null;
+            maquina = db.Maquinas.Find(23);
+            Assert.That(maquina.Status(), Is.EqualTo("Parada"));
+
+            maquina = null;
+            maquina = db.Maquinas.Find(41);
+            Assert.That(maquina.Status(), Is.EqualTo("Manutenção"));
+
+            maquina = null;
+            maquina = db.Maquinas.Find(100);
+            Assert.That(maquina.Status(), Is.EqualTo("Manutenção"));
+
+
+        }
+        
+
+        [Test]
+        public void DeveListarTop5ParadasMaquina()
+        {
+            List<ParadasMaquina> paradasMaquinas = db.ParadasMaquinas.OrderByDescending(pd => pd.Id).Take(5).ToList();
+
+            Assert.That(paradasMaquinas.Count, Is.EqualTo(5));
+        }
+        
+        [Test]
+        public void DeveListarTop5ParadasPorMaquinaEmPeriodo()
+        {
+            DateTime dateTime = DateTime.Now.AddDays(-50);
+            List<IGrouping<int?, ParadasMaquina>> paradasMaquinas =
+                db.ParadasMaquinas.Where(m => m.IdMaquina == 6 &&
+                    m.DataInicio > dateTime).GroupBy(m => m.IdMotivo1).ToList();
+            Assert.That(paradasMaquinas.Count(), Is.EqualTo(5));
         }
     }
    

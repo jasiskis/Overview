@@ -29,6 +29,21 @@ namespace GrobDashboard.UserControls
             NomeMaquina = OMaquina.Nome;
 
             lblNomeMaquina.Text = OMaquina.Nome;
+
+            List<InformacoesMaquina> informacoesMaquinas = db.InformacoesMaquinas.Where(info => info.IdMaquina == OMaquina.Id).ToList();
+
+            Maq.DataSource = informacoesMaquinas;
+            Maq.DataBind();
+
+            
+            infoMaq.DataSource = informacoesMaquinas;
+            infoMaq.DataBind();
+           
+        }
+
+        protected void teste_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
