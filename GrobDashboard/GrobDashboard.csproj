@@ -496,6 +496,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\GrobContext.cs" />
+    <Compile Include="Domain\DadosGrafico.cs" />
     <Compile Include="Domain\InformacoesMaquina.cs" />
     <Compile Include="Domain\Maquina.cs" />
     <Compile Include="Domain\MaquinaJSON.cs" />

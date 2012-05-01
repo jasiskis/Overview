@@ -190,8 +190,8 @@ function GeradorDeMaquina(fn, paramArray) {
 */
 
 function abrePopUpInfo(id) {
-    populaGaugeDiponibilidade(id,0);
-    geraGraficos(id, 7);
+    geraGraficosDisponibilidade(id, 1);
+    geraGraficosParadas(id, 1);
     $('.dialog-maquina').dialog('close');
     $('#dialog-maquina' + id).dialog('open');
 }
@@ -204,13 +204,21 @@ function abrePopUpInfo(id) {
 */
 
 function geraGraficos(maq, dias) {
+    if (dias == 0) {
+        dias = event.target.value;
+    }
+
+    geraGraficosDisponibilidade(maq, dias);
+    geraGraficosParadas(maq, dias);
+}
+
+function geraGraficosParadas(maq, dias) {
     
     //Se for  == 0 é porque veio do evento change lá no UserControl, se não veio de alguma chama desse .js
     if(dias == 0)
     {
-      dias = event.target.value;  
+      dias = event.target.value;
     }
-
     //*******************************
     //Pega Valores das paradas de máquina do WebMethod na Overview.aspx.cs
     //*******************************
@@ -236,17 +244,47 @@ function geraGraficos(maq, dias) {
     populaGraficoDeParadas(maq, dadosGrafico);
 }
 
+function geraGraficosDisponibilidade(maq, dias) {
+
+    //Se for  == 0 é porque veio do evento change lá no UserControl, se não veio de alguma chama desse .js
+    if (dias == 0) {
+        dias = event.target.value;
+    }
+    //*******************************
+    //Pega Valores da disponibilidade  de máquina do WebMethod na Overview.aspx.cs
+    //*******************************
+    var pagePath = window.location.pathname;
+    var dadosGrafico;
+    //Create list of parameters in the form:
+    //{"paramName1":"paramValue1","paramName2":"paramValue2"}
+    var paramList = '';
+    paramList = '{"id":"' + maq + '","dias":"' + dias + '"}';
+    //Call the page method
+    $.ajax({
+        type: "POST",
+        url: pagePath + "/RetornaDadosDisponibilidade",
+        contentType: "application/json; charset=utf-8",
+        data: paramList,
+        async: false,
+        dataType: "json",
+        success: function (response) {
+            dadosGrafico = response.d;
+        }
+    });
+    //Chama Função que tem os comando do google para gerar o gráfico
+    populaGaugeDiponibilidade(maq, dadosGrafico);
+}
+
 google.load('visualization', '1', { packages: ['gauge'] });
 google.load('visualization', '1', { packages: ['corechart'] });
 google.setOnLoadCallback(populaGaugeDiponibilidade);
 
 function populaGaugeDiponibilidade(id, dadosGrafico) {
-    var porcDisponibilidade = Math.floor(Math.random() * 101);
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Label');
     data.addColumn('number', 'Value');
     data.addRows([
-          ['Disp.', porcDisponibilidade]
+          ['Disp.', parseInt(dadosGrafico)]
         ]);
 
     var options = {
@@ -274,17 +312,18 @@ function populaGraficoDeParadas(id, dadosGrafico) {
         for (var i = 0; i < split.length; i++) {
             var dados = split[i].split(":");
             data.setValue(i, 0, dados[0]);
-            data.setValue(i, 1, parseInt(dados[1]));
+            data.setValue(i, 1, parseFloat(dados[1]));
         }
     }else {
         data.addRows(1);
         data.setValue(0, 0, "Sem Dados");
-        data.setValue(0, 1, 100);
+        data.setValue(0, 1, 1);
     }
 
     var options = {
-        title: 'Top 5 Paradas',
+        title: 'Top 5 Paradas (Minutos)',
         is3D: true,
+        labels: 'name',
         backgroundColor: '#F5F3E5',
         legend: { position: 'right', textStyle: { fontSize: 10} },
         heigth: 300, width: 330,

@@ -28,6 +28,19 @@ namespace GrobDashboard.Domain
         [Column]
         [ForeignKey("IdMaquina")]
         public virtual Maquina Maquina { get; set; }
+        [Column]
+        [ForeignKey("IdMotivo1")]
+        public virtual Motivo1 Motivo1 { get; set; }
+        
+    }
 
+    [Table("SPI_TB_MOTIVO1")]
+    public class Motivo1
+    {
+        [Key]
+        [Column("ID_MOTIVO1")]
+        public int IdMotivo { get; set; }
+        [Column("DSC_MOTIVO1")]
+        public String Descricao { get; set; }
     }
 }

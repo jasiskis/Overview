@@ -17,31 +17,131 @@ namespace GrobDashboard
     public partial class Overview : System.Web.UI.Page
     {
 
-        private GrobContext db = new GrobContext();
+        private static GrobContext db = new GrobContext();
 
         [WebMethod]
         public static string RetornaValoresGraficoParadas(int id, int dias)
         {
-            GrobContext db = new GrobContext();
             DateTime dateTime = DateTime.Now.AddDays(-dias);
 
-            List<IGrouping<int?, ParadasMaquina>> paradasMaquinas =
-                db.ParadasMaquinas.Where(m => m.IdMaquina == id  &&
-                    m.DataInicio > dateTime).GroupBy(m => m.IdMotivo1).ToList();
-            String valoresGraf = "";
-            foreach (var paradasMaquina in paradasMaquinas)
-            {
-                String key = paradasMaquina.Key.ToString();
-                if (key.Equals(""))
-                {
-                    key = "Sem Motivo";
-                }
-                String count = paradasMaquina.Count().ToString();
-                valoresGraf = valoresGraf + key + ":" + count + ';';
-            }
-            return valoresGraf;
+            return GeraDadosGrafico(id, dateTime);
         }
 
+        // ***********************************************
+        // Método que retorna os dados do gráfico concatenados em uma string
+        // só mandar o id da maquina, a data inicial de pesquisa e o context.
+        private static string GeraDadosGrafico(int id, DateTime dateTime )
+        {
+            GrobContext db = new GrobContext();
+
+            List<IGrouping<string, ParadasMaquina>> paradasMaquinas =
+                db.ParadasMaquinas.Where(m => m.IdMaquina == id &&
+                    (m.DataFim > dateTime || m.DataInicio > dateTime || m.DataFim == null)).GroupBy(m => m.Motivo1.Descricao).ToList();
+
+            List<DadosGrafico> dadosGraficos = new List<DadosGrafico>();
+
+            foreach (var paradasMaquina in paradasMaquinas)
+            {
+                TimeSpan? intervaloTempo = TimeSpan.Zero;
+                foreach (var maquina in paradasMaquina)
+                {
+                    AcetaListaDeDatas(dateTime, maquina);
+                    intervaloTempo = intervaloTempo + (maquina.DataFim - maquina.DataInicio);
+                }
+                dadosGraficos.Add(new DadosGrafico(paradasMaquina.Key, intervaloTempo));
+            }
+            dadosGraficos = dadosGraficos.OrderByDescending(d => d.IntervaloTempo).ToList();
+
+            String valoresGrafico = String.Empty;
+            foreach (var dadosGrafico in dadosGraficos)
+            {
+                String desc = dadosGrafico.Descricao;
+                if (desc == null)
+                {
+                    desc = "Sem Motivo";
+                }
+
+                if(dadosGrafico.IntervaloTempo == null)
+                {
+                    dadosGrafico.IntervaloTempo = TimeSpan.Zero;
+                }
+
+                valoresGrafico = valoresGrafico + desc + ":" + dadosGrafico.IntervaloTempo.Value.TotalMinutes + ';';
+            }
+            db.Dispose();
+
+            return valoresGrafico;
+        }
+
+        // ******************************************************************
+        //**********************************************************************
+        [WebMethod]
+        public static string RetornaDadosDisponibilidade(int id, int dias)
+        {
+            DateTime dateTime = DateTime.Now.AddDays(-dias);
+
+            int horasTotais = dias*24;
+
+            return GeraDadosDisponiblidade(id, horasTotais, dateTime).ToString();
+        }
+
+        /* Método que implementa o cálculo 
+        Fórmula Disponibilidade:
+        (24 - Todas as paradas - paradas gerais)*100 /24. */
+        private static int GeraDadosDisponiblidade(int id, int horasTotais, DateTime dateTime)
+        {
+            GrobContext db = new GrobContext();
+
+            List<ParadasMaquina> paradasMaquinas =
+                db.ParadasMaquinas.Where(m => m.IdMaquina == id &&
+                                              (m.DataFim > dateTime || m.DataInicio > dateTime || m.DataFim == null)).ToList();
+
+            TimeSpan? intervaloTempo = TimeSpan.Zero;
+            foreach (var paradasMaquina in paradasMaquinas)
+            {
+                AcetaListaDeDatas(dateTime, paradasMaquina);
+                intervaloTempo = intervaloTempo + (paradasMaquina.DataFim - paradasMaquina.DataInicio);
+            }
+
+            //Faz o Calcúlo para saber quais das paradas são gerais.
+            List<ParadasMaquina> maquinas = paradasMaquinas.Where(p => p.IdMotivo1 == 39).ToList();
+            TimeSpan? intervaloTempoGeral = TimeSpan.Zero;
+            foreach (var paradasMaquina in maquinas)
+            {
+               AcetaListaDeDatas(dateTime, paradasMaquina);
+                intervaloTempoGeral = intervaloTempoGeral + (paradasMaquina.DataFim - paradasMaquina.DataInicio);
+            }
+
+            if (intervaloTempo == null)
+            {
+                intervaloTempo = TimeSpan.Zero;
+            }
+            if (intervaloTempoGeral == null)
+            {
+                intervaloTempoGeral = TimeSpan.Zero;
+            }
+
+            double totalHoras = intervaloTempo.Value.TotalHours;
+            double totalHorasGerais = intervaloTempoGeral.Value.TotalHours;
+
+            db.Dispose();
+            //Cálculo para saber a disponibilidade.
+            return (int) (((horasTotais - (totalHoras - totalHorasGerais))*100)/horasTotais);
+        }
+
+        private static void AcetaListaDeDatas(DateTime dateTime, ParadasMaquina paradasMaquina)
+        {
+            if (paradasMaquina.DataInicio < dateTime)
+            {
+                paradasMaquina.DataInicio = dateTime;
+            }
+            if (paradasMaquina.DataFim == null)
+            {
+                paradasMaquina.DataFim = DateTime.Now;
+            }
+        }
+
+        // ******************************************************************
         [WebMethod]
         public static string RetriveWebControl(String id)
         {

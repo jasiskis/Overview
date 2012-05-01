@@ -13,6 +13,10 @@ namespace Test.Model
     {
         private GrobContext db = new GrobContext();
 
+        public MaquinaTest()
+        {
+        }
+
         [Test]
         public void
             ListaTodasMaquinas()
@@ -88,11 +92,92 @@ namespace Test.Model
         public void DeveListarTop5ParadasPorMaquinaEmPeriodo()
         {
             DateTime dateTime = DateTime.Now.AddDays(-50);
-            List<IGrouping<int?, ParadasMaquina>> paradasMaquinas =
+            List<IGrouping<string, ParadasMaquina>> paradasMaquinas =
                 db.ParadasMaquinas.Where(m => m.IdMaquina == 6 &&
-                    m.DataInicio > dateTime).GroupBy(m => m.IdMotivo1).ToList();
+                    m.DataInicio > dateTime).GroupBy(m => m.Motivo1.Descricao).ToList();
             Assert.That(paradasMaquinas.Count(), Is.EqualTo(5));
         }
+
+        [Test]
+        public void DeveListarParadaEMostrarDescricaoDoMotivo()
+        {
+            List<ParadasMaquina> paradasMaquinas = db.ParadasMaquinas.Where(pd => pd.IdMotivo1 == 38).Take(5).ToList();
+
+            Assert.That(paradasMaquinas[0].Motivo1.Descricao, Is.EqualTo("Eficiência"));
+        }
+
+        [Test]
+        public void DeveListarTop5ParadasPorMaquinaEmPeriodoResultandoHorasParado()
+        {
+            DateTime dateTime = DateTime.Now.AddDays(-50);
+            List<IGrouping<string, ParadasMaquina>> paradasMaquinas =
+                db.ParadasMaquinas.Where(m => m.IdMaquina == 6 &&
+                    m.DataInicio > dateTime).GroupBy(m => m.Motivo1.Descricao).ToList();
+
+
+            List<DadosGrafico> dadosGraficos = new List<DadosGrafico>();
+
+            foreach (var paradasMaquina in paradasMaquinas)
+            {
+                TimeSpan? intervaloTempo = TimeSpan.Zero;
+                foreach (var maquina in paradasMaquina)
+                {
+                    intervaloTempo = intervaloTempo +(maquina.DataFim - maquina.DataInicio);
+                }
+                dadosGraficos.Add(new DadosGrafico(paradasMaquina.Key, intervaloTempo));
+            }
+            dadosGraficos = dadosGraficos.OrderByDescending(d => d.IntervaloTempo).ToList();
+
+            Assert.That(dadosGraficos[0].Descricao, Is.EqualTo("Geral"));
+        }
+
+        [Test]
+        public void DeveRetornarDisponibilidadeDaMaquinaEm1Dia()
+        {
+          DateTime dateTime = DateTime.Now.AddDays(-1);
+
+            List<ParadasMaquina> paradasMaquinas =
+                db.ParadasMaquinas.Where(m => m.IdMaquina == 6 &&
+                    m.DataFim > dateTime || m.DataInicio > dateTime).ToList();
+
+            TimeSpan? intervaloTempo = TimeSpan.Zero;
+            foreach (var paradasMaquina in paradasMaquinas)
+            {
+                if(paradasMaquina.DataInicio < dateTime)
+                {
+                    paradasMaquina.DataInicio = dateTime;
+                }
+                intervaloTempo = intervaloTempo + (paradasMaquina.DataFim - paradasMaquina.DataInicio);
+            }
+            
+            List<ParadasMaquina> maquinas = paradasMaquinas.Where(p => p.IdMotivo1 == 39).ToList();
+            TimeSpan? intervaloTempoGeral = TimeSpan.Zero;
+            foreach (var paradasMaquina in maquinas)
+            {
+                if (paradasMaquina.DataInicio < dateTime)
+                {
+                    paradasMaquina.DataInicio = dateTime;
+                }
+                intervaloTempoGeral = intervaloTempoGeral + (paradasMaquina.DataFim - paradasMaquina.DataInicio);
+            }
+
+            if (intervaloTempo == null)
+            {
+                intervaloTempo = TimeSpan.Zero;
+            }
+            if (intervaloTempoGeral == null)
+            {
+                intervaloTempoGeral = TimeSpan.Zero;
+            }
+
+            double totalHoras = intervaloTempo.Value.TotalHours;
+            double totalHorasGerais = intervaloTempoGeral.Value.TotalHours;
+
+            int disponibilidade = (int) (((24 - totalHoras/24 - totalHorasGerais)*100)/24);
+            
+            Assert.That(disponibilidade, Is.EqualTo(95));
+        }
+        
     }
    
 }

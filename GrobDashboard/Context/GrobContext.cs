@@ -13,5 +13,6 @@ namespace GrobDashboard.Context
         public DbSet<Maquina> Maquinas { get; set; }
         public DbSet<InformacoesMaquina> InformacoesMaquinas { get; set; }
         public DbSet<ParadasMaquina> ParadasMaquinas{ get; set; }
+        public DbSet<Motivo1> Motivos1{ get; set; }
     }
 }
