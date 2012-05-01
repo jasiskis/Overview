@@ -10,7 +10,7 @@
 #seletorTipoMaquina input[type="checkbox"]{ margin-bottom: 1em;}
 
 #botoesPlaceHolder{ width: 100%; padding: 3px; background-color: #CCCCCC}
-#botoesPlaceHolder input[type=submit]{width: 49%}
+#botoesPlaceHolder input[type=button]{width: 49%}
 
 #contentCentral{margin: 0; padding: 15px; width: 76%;height: 100%;background-image: url("../Imagens/backgroundContentMaquina.gif");
                 background-repeat: repeat; border-left: solid 1px white;overflow: auto; }
@@ -29,6 +29,12 @@
                     -webkit-box-shadow: 0 0 5px 5px#888;
                     box-shadow: 0 0 5px 5px #888;
     display: table;}
+.trashCanDroppable {width: 170px;height: 170px; border-radius: 20px;border-style: solid;border-color: darkgreen;
+    border-width: 5px; display: inline-table;margin: 5px;background-image: url("../Imagens/trash_can.png");
+    background-repeat: no-repeat; background-position: center;
+    
+} 
+   
                  
 .maquinaDragHelper .middle {
     position: absolute;

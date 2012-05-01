@@ -6,87 +6,134 @@
 */
 $(instanciaObjetos);
 
+function carregarMaquinasDosCookies() {
+    var maquinas = $.cookie('maquinas').split(";");
+
+    for (var i = 0; i < maquinas.length; i++) {
+        var dados = maquinas[i].split(":");
+        if (dados[0] != "" && dados[1] != "") {
+            carregaMaquinaPorIdMaquinaEPosicao(dados[0], dados[1]);
+        }
+    }
+}
+
+function carregaMaquinaPorIdMaquinaEPosicao(pos, maq) {
+    var responsew = GeradorDeMaquina("RetriveWebControl", ["id", maq]);
+
+    $("[pos = '" + pos + "']").droppable('disable');
+    $("[pos = '" + pos + "']").removeAttr('style');
+    $("[pos = '" + pos + "']").addClass('maquinaSemDroppable');
+    $("[pos = '" + pos + "']").attr('maq', maq);
+    $("[pos = '" + pos + "']").append(responsew);
+    $(instanciaObjetos);
+}
+
 function instanciaObjetos() {
+
+
     $('.maquinaDrag').draggable({
-        cursor: 'move',
-        containment: 'document',
-        helper: objetoQueMostraEnquantoDragging,
-        snap: '.maquinasDroppable',
-        revert: 'invalid'
-    });
+            cursor: 'move',
+            containment: 'document',
+            helper: objetoQueMostraEnquantoDragging,
+            snap: '.maquinasDroppable',
+            revert: 'invalid'
+        });
 
     $('.maquinasDroppable').droppable({
-        accept: '.maquinaDrag , .containerMaquina',
-        drop: dropMaquina
-    });
+            accept: '.maquinaDrag , .containerMaquina',
+            drop: dropMaquina
+        });
 
     $('.dialog-maquina').dialog({
-        autoOpen: false,
-        height: 300,
-        width: 1250,
-        position: ({ my: 'left', at: 'left bottom', of: $('#contentCentral') })
-    });
-    
+            autoOpen: false,
+            height: 300,
+            width: 1250,
+            position: ({ my: 'left', at: 'left bottom', of: $('#contentCentral') })
+        });
+
     $('.containerMaquina').draggable({
-        cursor: 'move',
-        containment: 'document',
-        snap: '.maquinasDroppable',
-        revert: true
-    });
+            cursor: 'move',
+            containment: 'document',
+            snap: '.maquinasDroppable',
+            revert: true
+        });
 
     $("#selectable").selectable();
-    $("#selectable").bind("selectablestop", function (event) {
+    $("#selectable").bind("selectablestop", function(event) {
         var result = "";
-        $(".ui-selected", this).each(function () {
+        $(".ui-selected", this).each(function() {
             result += this.getAttribute("idtipomaquina") + ";";
         });
 
-         CarregaMaquinasDoTipo("CarregaTiposMaquina", ["ids", result]);
+        CarregaMaquinasDoTipo("CarregaTiposMaquina", ["ids", result]);
     });
-    
+
     $(".botao").button();
 }
+
 // ############################################################################
 
 
 /* * *
     Eventos Drag and DROP
 */
+
 function dropMaquina(event, ui) {
+
+    //se for um container de droppable sem nenhuma máquina entra aqui.
     if ($(ui.draggable).hasClass('maquinaDrag')) {
-        var responsew = GeradorDeMaquina("RetriveWebControl", ["id", ui.draggable.attr('id')]);
+        //Checa se Máquina não existe no dashboard.
+        var checkMaquina = ui.draggable.attr('id');
 
-        $(this).droppable('disable');
-        $(this).removeAttr('style');
-        $(this).addClass('maquinaSemDroppable');
-        $(this).append(responsew);
-        ui.draggable.css("background-color", "#CCC123");
-        ui.draggable.draggable('option', 'revert', false);
+        var maquinaExistente = $("div [maq=" + checkMaquina + "]");
 
-        $(instanciaObjetos);
-    } else if ($(ui.draggable).hasClass('containerMaquina')) {
+        //Se não existe adiciona máquina
+        if (maquinaExistente.attr("maq") == undefined) {
+
+            var responsew = GeradorDeMaquina("RetriveWebControl", ["id", ui.draggable.attr('id')]);
+
+            $(this).droppable('disable');
+            $(this).removeAttr('style');
+            $(this).addClass('maquinaSemDroppable');
+            $(this).attr('maq', ui.draggable.attr('id'));
+            $(this).append(responsew);
+            ui.draggable.css("background-color", "#CCC123");
+            ui.draggable.draggable('option', 'revert', false);
+
+            $(instanciaObjetos);
+
+        } else {
+            $("#textWarning").html("");
+            $("#textWarning").append("Máquina já está no Dashboard.");
+            $("#warningmessage").click();
+            return false;
+        }
+    } //se for uma máquina que já ta na tela pra outro lugar entra aqui. 
+    else if ($(ui.draggable).hasClass('containerMaquina')) {
         var responsew = GeradorDeMaquina("RetriveWebControl", ["id", ui.draggable.attr('idmaquina')]);
 
         var idmaq = ui.draggable.attr('idmaquina');
-        $('[idmaquina=' + idmaq +']').parent().droppable('enable');
+        $('[idmaquina=' + idmaq + ']').parent().droppable('enable');
         $('[idmaquina=' + idmaq + ']').parent().removeClass('maquinaSemDroppable');
         $('[idmaquina=' + idmaq + ']').parent().addClass('maquinasDroppable');
-        
-        
+        $("div [maq=" + idmaq + "]").attr("maq", "");
+
         $(this).droppable('disable');
         $(this).removeAttr('style');
         $(this).addClass('maquinaSemDroppable');
+        $(this).attr('maq', ui.draggable.attr('idmaquina'));
         $(this).append(responsew);
         ui.draggable.css("background-color", "#CCC123");
         ui.draggable.draggable('option', 'revert', false);
         ui.draggable.remove();
-       
+
         $(instanciaObjetos);
     }
+
 }
 
 function objetoQueMostraEnquantoDragging(event) {
-    return '<div class="maquinaDragHelper"><div class="middle"><div class="texto">'+ $(this).attr("descricao") + '</div></div></div>';
+    return '<div class="maquinaDragHelper"><div class="middle"><div class="texto">' + $(this).attr("descricao") + '</div></div></div>';
 }
 
 
@@ -98,6 +145,7 @@ function objetoQueMostraEnquantoDragging(event) {
     Eu chamo um WebMethod que está no código do .Net
     e dependendo do resultado faço algo.
 */
+
 function ChamaWebMethodNoAsp(fn, paramArray, successFn, errorFn) {
     var pagePath = window.location.pathname;
     var htmlGeradoDaMaquina;
@@ -113,15 +161,15 @@ function ChamaWebMethodNoAsp(fn, paramArray, successFn, errorFn) {
     paramList = '{' + paramList + '}';
     //Call the page method
     $.ajax({
-        type: "POST",
-        url: pagePath + "/" + fn,
-        contentType: "application/json; charset=utf-8",
-        data: paramList,
-        async: false,
-        dataType: "json",
-        success: successFn,
-        error: errorFn
-    });
+            type: "POST",
+            url: pagePath + "/" + fn,
+            contentType: "application/json; charset=utf-8",
+            data: paramList,
+            async: false,
+            dataType: "json",
+            success: successFn,
+            error: errorFn
+        });
 }
 
 function CarregaMaquinasDoTipo(fn, paramArray) {
@@ -148,7 +196,16 @@ function CarregaMaquinasDoTipo(fn, paramArray) {
         success: function (response) {
             $("#maquinasPlaceHolder").empty();
             for (var i = 0; i < response.d.length; i++) {
-                $("#maquinasPlaceHolder").prepend('<div id="' + response.d[i].Id + '" descricao="'+ response.d[i].Desc +'" class="maquinaDrag">' + response.d[i].Desc + '</div>');
+                var maquinaExistente = $("div [maq=" + response.d[i].Id + "]");
+
+                //Se não tem adiciona com a cor normal
+                if (maquinaExistente.attr("maq") == undefined) {
+                    $("#maquinasPlaceHolder").prepend('<div id="' + response.d[i].Id + '" descricao="' + response.d[i].Desc + '" class="maquinaDrag">' + response.d[i].Desc + '</div>');
+                } else {//Altera a Cor
+                    $("#maquinasPlaceHolder").prepend('<div id="' + response.d[i].Id +
+                        '" descricao="' + response.d[i].Desc + '" class="maquinaDrag" style="background-color: #CCC123;">'
+                        + response.d[i].Desc + '</div>');
+                }
             }
             $(instanciaObjetos);
         }
@@ -156,6 +213,7 @@ function CarregaMaquinasDoTipo(fn, paramArray) {
 }
 
 //Chama WebMethod no asp, e retorna um HTML.
+
 function GeradorDeMaquina(fn, paramArray) {
     var pagePath = window.location.pathname;
     var htmlGeradoDaMaquina;
@@ -171,16 +229,16 @@ function GeradorDeMaquina(fn, paramArray) {
     paramList = '{' + paramList + '}';
     //Call the page method
     $.ajax({
-        type: "POST",
-        url: pagePath + "/" + fn,
-        contentType: "application/json; charset=utf-8",
-        data: paramList,
-        async: false,
-        dataType: "json",
-        success: function (response) {
-            htmlGeradoDaMaquina = response.d;
-        }
-    });
+            type: "POST",
+            url: pagePath + "/" + fn,
+            contentType: "application/json; charset=utf-8",
+            data: paramList,
+            async: false,
+            dataType: "json",
+            success: function(response) {
+                htmlGeradoDaMaquina = response.d;
+            }
+        });
     return htmlGeradoDaMaquina;
 }
 
@@ -204,21 +262,13 @@ function abrePopUpInfo(id) {
 */
 
 function geraGraficos(maq, dias) {
-    if (dias == 0) {
-        dias = event.target.value;
-    }
 
     geraGraficosDisponibilidade(maq, dias);
     geraGraficosParadas(maq, dias);
 }
 
 function geraGraficosParadas(maq, dias) {
-    
-    //Se for  == 0 é porque veio do evento change lá no UserControl, se não veio de alguma chama desse .js
-    if(dias == 0)
-    {
-      dias = event.target.value;
-    }
+
     //*******************************
     //Pega Valores das paradas de máquina do WebMethod na Overview.aspx.cs
     //*******************************
@@ -227,29 +277,25 @@ function geraGraficosParadas(maq, dias) {
     //Create list of parameters in the form:
     //{"paramName1":"paramValue1","paramName2":"paramValue2"}
     var paramList = '';
-    paramList = '{"id":"'+maq+'","dias":"'+dias+'"}';
+    paramList = '{"id":"' + maq + '","dias":"' + dias + '"}';
     //Call the page method
     $.ajax({
-        type: "POST",
-        url: pagePath + "/RetornaValoresGraficoParadas",
-        contentType: "application/json; charset=utf-8",
-        data: paramList,
-        async: false,
-        dataType: "json",
-        success: function (response) {
-            dadosGrafico = response.d;
-        }
-    });
+            type: "POST",
+            url: pagePath + "/RetornaValoresGraficoParadas",
+            contentType: "application/json; charset=utf-8",
+            data: paramList,
+            async: false,
+            dataType: "json",
+            success: function(response) {
+                dadosGrafico = response.d;
+            }
+        });
     //Chama Função que tem os comando do google para gerar o gráfico
     populaGraficoDeParadas(maq, dadosGrafico);
 }
 
 function geraGraficosDisponibilidade(maq, dias) {
 
-    //Se for  == 0 é porque veio do evento change lá no UserControl, se não veio de alguma chama desse .js
-    if (dias == 0) {
-        dias = event.target.value;
-    }
     //*******************************
     //Pega Valores da disponibilidade  de máquina do WebMethod na Overview.aspx.cs
     //*******************************
@@ -261,16 +307,16 @@ function geraGraficosDisponibilidade(maq, dias) {
     paramList = '{"id":"' + maq + '","dias":"' + dias + '"}';
     //Call the page method
     $.ajax({
-        type: "POST",
-        url: pagePath + "/RetornaDadosDisponibilidade",
-        contentType: "application/json; charset=utf-8",
-        data: paramList,
-        async: false,
-        dataType: "json",
-        success: function (response) {
-            dadosGrafico = response.d;
-        }
-    });
+            type: "POST",
+            url: pagePath + "/RetornaDadosDisponibilidade",
+            contentType: "application/json; charset=utf-8",
+            data: paramList,
+            async: false,
+            dataType: "json",
+            success: function(response) {
+                dadosGrafico = response.d;
+            }
+        });
     //Chama Função que tem os comando do google para gerar o gráfico
     populaGaugeDiponibilidade(maq, dadosGrafico);
 }
@@ -284,14 +330,18 @@ function populaGaugeDiponibilidade(id, dadosGrafico) {
     data.addColumn('string', 'Label');
     data.addColumn('number', 'Value');
     data.addRows([
-          ['Disp.', parseInt(dadosGrafico)]
+            ['Disp.', parseInt(dadosGrafico)]
         ]);
 
     var options = {
-        width: 200, height: 200,
-        redFrom: 30, redTo: 60,
-        yellowFrom: 61, yellowTo: 85,
-        greenFrom: 86, greenTo: 100,
+        width: 200,
+        height: 200,
+        redFrom: 0,
+        redTo: 49,
+        yellowFrom: 50,
+        yellowTo: 70,
+        greenFrom: 71,
+        greenTo: 100,
         minorTicks: 5
     };
 
@@ -307,14 +357,14 @@ function populaGraficoDeParadas(id, dadosGrafico) {
 
     var split = dadosGrafico.split(";");
 
-    if (!(split.length == 1  && split[0] == "")) {
+    if (!(split.length == 1 && split[0] == "")) {
         data.addRows(split.length);
         for (var i = 0; i < split.length; i++) {
             var dados = split[i].split(":");
             data.setValue(i, 0, dados[0]);
             data.setValue(i, 1, parseFloat(dados[1]));
         }
-    }else {
+    } else {
         data.addRows(1);
         data.setValue(0, 0, "Sem Dados");
         data.setValue(0, 1, 1);
@@ -325,8 +375,9 @@ function populaGraficoDeParadas(id, dadosGrafico) {
         is3D: true,
         labels: 'name',
         backgroundColor: '#F5F3E5',
-        legend: { position: 'right', textStyle: { fontSize: 10} },
-        heigth: 300, width: 330,
+        legend: { position: 'right', textStyle: { fontSize: 10 } },
+        heigth: 300,
+        width: 330,
         chartArea: { width: "90%", height: "80%" },
         fontSize: 16
     };
@@ -334,7 +385,25 @@ function populaGraficoDeParadas(id, dadosGrafico) {
 
     // Create and draw the visualization.
     new google.visualization.PieChart(document.getElementById('paradas_div' + id)).
-            draw(data, options);
-    
-// ######################################################
+        draw(data, options);
+
+    // ######################################################
+}
+
+//Funções para salvar as escolhas de máquina em Cache
+
+function gravaMaquinasNosCookies() {
+    var posMaquinas = "";
+    for (var j = 1; j <= 24; j++) {
+        var maquina = $("[pos = '" + j + "']").attr("maq");
+        posMaquinas = posMaquinas + j + ":" + maquina + ";";
+    }
+
+    $.cookie('maquinas', posMaquinas, { expires: 1000 });
+    showMessage('sucess');
+    showMessage('sucess');
+}
+
+function resetarCookies() {
+    $.cookie('maquinas', "", { expires: 1000 });
 }

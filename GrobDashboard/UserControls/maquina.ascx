@@ -66,7 +66,7 @@
            <div id="chart_div<%=IdMaquina%>" style="float: left;"></div>
            <div id="paradas_div<%=IdMaquina%>"style="float: right;">Não Possui Dados</div>
 
-    <select id="intervaloDatas" onchange="geraGraficos(<%=IdMaquina%>,0)">
+    <select id="intervaloDatas" onchange="geraGraficos(<%=IdMaquina%>,this.value)">
             <option value="1" selected="selected">24 Horas</option>
             <option value="7" >1 Semana</option>
             <option value="30" >1 Mês</option>

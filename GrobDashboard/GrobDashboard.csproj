@@ -477,13 +477,16 @@
     <Content Include="JQuery\development-bundle\version.txt" />
     <Content Include="JQuery\index.html" />
     <Content Include="JQuery\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
     <Content Include="JQuery\js\jquery-1.7.1.min.js" />
     <Content Include="JQuery\js\jquery-ui-1.8.18.custom.min.js" />
     <Content Include="Overview.aspx" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\Messages.js" />
     <Content Include="Scripts\overviewFunctions.js" />
+    <Content Include="Styles\Message.css" />
     <Content Include="Styles\Overview.css" />
     <Content Include="UserControls\maquina.ascx" />
     <Content Include="Web.config" />
