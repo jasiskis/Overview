@@ -35,7 +35,7 @@ function instanciaObjetos() {
             cursor: 'move',
             containment: 'document',
             helper: objetoQueMostraEnquantoDragging,
-            snap: '.maquinasDroppable',
+            snap: '.maquinasDroppable .trashCanDroppable',
             revert: 'invalid'
         });
 
@@ -43,6 +43,11 @@ function instanciaObjetos() {
             accept: '.maquinaDrag , .containerMaquina',
             drop: dropMaquina
         });
+
+    $('.trashCanDroppable').droppable({
+        accept: '.maquinaDrag , .containerMaquina',
+        drop: deletaMaquina
+    });
 
     $('.dialog-maquina').dialog({
             autoOpen: false,
@@ -130,6 +135,18 @@ function dropMaquina(event, ui) {
         $(instanciaObjetos);
     }
 
+}
+function deletaMaquina(event, ui) {
+    var idmaq = ui.draggable.attr('idmaquina');
+    $('[idmaquina=' + idmaq + ']').parent().droppable('enable');
+    $('[idmaquina=' + idmaq + ']').parent().removeClass('maquinaSemDroppable');
+    $('[idmaquina=' + idmaq + ']').parent().addClass('maquinasDroppable');
+    $("div [maq=" + idmaq + "]").attr("maq", "");
+
+    ui.draggable.draggable('option', 'revert', false);
+    ui.draggable.remove();
+    
+    $("#"+idmaq).css("background-color", "#006A00");
 }
 
 function objetoQueMostraEnquantoDragging(event) {
