@@ -62,6 +62,7 @@
     <Content Include="Imagens\MaquinaAmarela.png" />
     <Content Include="Imagens\MaquinaVerde.png" />
     <Content Include="Imagens\MaquinaVermelha.png" />
+    <Content Include="Imagens\trash_can.png" />
     <Content Include="JQuery\css\south-street\images\ui-bg_glass_55_fcf0ba_1x400.png" />
     <Content Include="JQuery\css\south-street\images\ui-bg_gloss-wave_100_ece8da_500x100.png" />
     <Content Include="JQuery\css\south-street\images\ui-bg_highlight-hard_100_f5f3e5_1x100.png" />

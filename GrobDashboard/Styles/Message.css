@@ -1,4 +1,7 @@
-﻿.message
+﻿div {
+    font-family: Arial;
+}
+.message
 {
                 -webkit-background-size: 40px 40px;
                 -moz-background-size: 40px 40px;
