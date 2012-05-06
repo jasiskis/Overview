@@ -16,7 +16,6 @@
       <File id="C1C53932-6520-446E-8B4E-28D9B172AD02/d:Integrated/f:InteracaoTelaTest.cs" caret="194" fromTop="10" />
       <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx.designer.cs" caret="0" fromTop="0" />
       <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Domain/f:MaquinaJSON.cs" caret="317" fromTop="11" />
-      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Styles/f:Overview.css" caret="2508" fromTop="18" />
       <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Domain/f:InformacoesMaquina.cs" caret="927" fromTop="28" />
       <File id="C1C53932-6520-446E-8B4E-28D9B172AD02/f:App.config" caret="489" fromTop="7" />
       <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Web.config" caret="634" fromTop="11" />
@@ -24,18 +23,16 @@
       <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Domain/f:ParadasMaquina.cs" caret="853" fromTop="16" />
       <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Context/f:GrobContext.cs" caret="487" fromTop="11" />
       <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Domain/f:Maquina.cs" caret="1893" fromTop="31" />
-      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx.cs" caret="1357" fromTop="14" />
-      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="1115" fromTop="0" />
-      <File id="C1C53932-6520-446E-8B4E-28D9B172AD02/d:Model/f:MaquinaTest.cs" caret="2650" fromTop="4" />
       <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:UserControls/f:maquina.ascx" caret="3542" fromTop="6" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Scripts/f:overviewFunctions.js" caret="431" fromTop="13" />
       <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:UserControls/f:maquina.ascx.cs" caret="710" fromTop="12" />
-      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Scripts/f:overviewFunctions.js" caret="8927" fromTop="7" />
+      <File id="C1C53932-6520-446E-8B4E-28D9B172AD02/d:Model/f:MaquinaTest.cs" caret="2650" fromTop="4" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Styles/f:Message.css" caret="30" fromTop="1" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx.cs" caret="1381" fromTop="14" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Styles/f:Overview.css" caret="1346" fromTop="13" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="3468" fromTop="7" />
     </RecentFiles>
     <RecentEdits>
-      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="935" fromTop="17" />
-      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="935" fromTop="17" />
-      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx.cs" caret="1535" fromTop="11" />
-      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx.cs" caret="1694" fromTop="29" />
       <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx.cs" caret="1973" fromTop="27" />
       <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx.cs" caret="1539" fromTop="2" />
       <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:UserControls/f:maquina.ascx" caret="1582" fromTop="28" />
@@ -62,13 +59,17 @@
       <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Scripts/f:overviewFunctions.js" caret="9178" fromTop="7" />
       <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Scripts/f:overviewFunctions.js" caret="9289" fromTop="17" />
       <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Scripts/f:overviewFunctions.js" caret="8927" fromTop="7" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Styles/f:Message.css" caret="30" fromTop="1" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="2847" fromTop="5" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/d:Styles/f:Overview.css" caret="1346" fromTop="13" />
+      <File id="F737A8F3-66EC-401A-AD3F-A365321E712E/f:Overview.aspx" caret="3483" fromTop="7" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>
     <ItemStatistics item="AspCodeCompletionContext">
       <Item value="id" priority="128" />
       <Item value="...follow_a_tab.27s_URL_instead_of_loading_its_content_via_ajax" priority="48" />
-      <Item value="div" priority="139" />
+      <Item value="div" priority="147" />
       <Item value="maquinasPlaceHolder" priority="6" />
       <Item value="script" priority="34" />
       <Item value="asp" priority="92" />
@@ -140,6 +141,7 @@
       <Item value="select" priority="6" />
       <Item value="option" priority="7" />
       <Item value="onchange" priority="6" />
+      <Item value="p" priority="6" />
     </ItemStatistics>
     <ItemStatistics item="CssCodeCompletionContext">
       <Item value="content" priority="4" />
@@ -172,7 +174,7 @@
       <Item value="background-image" priority="5" />
       <Item value="label" priority="5" />
       <Item value="max-height" priority="31" />
-      <Item value="inline-block" priority="18" />
+      <Item value="inline-block" priority="23" />
       <Item value="list-item" priority="9" />
       <Item value="table-column" priority="4" />
       <Item value="flexbox" priority="16" />
@@ -180,7 +182,7 @@
       <Item value="type" priority="17" />
       <Item value="margin-bottom" priority="11" />
       <Item value="margin-top" priority="3" />
-      <Item value="font-family" priority="17" />
+      <Item value="font-family" priority="23" />
       <Item value="fantasy" priority="4" />
       <Item value="monospace" priority="4" />
       <Item value="drop-initial-after-align" priority="3" />
@@ -215,11 +217,13 @@
       <Item value="vertical-align" priority="5" />
       <Item value="maquinaDragHelper" priority="8" />
       <Item value="middle" priority="4" />
-      <Item value="position" priority="11" />
+      <Item value="position" priority="17" />
       <Item value="top" priority="11" />
       <Item value="font-size" priority="0" />
       <Item value="oblique" priority="4" />
       <Item value="dialog-maquina" priority="4" />
+      <Item value="absolute" priority="6" />
+      <Item value="fixed" priority="4" />
     </ItemStatistics>
     <ItemStatistics item="JavaScriptSpecificContext">
       <Item value="$" priority="358" />

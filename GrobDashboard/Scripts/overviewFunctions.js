@@ -22,6 +22,7 @@ function carregaMaquinaPorIdMaquinaEPosicao(pos, maq) {
 
     $("[pos = '" + pos + "']").droppable('disable');
     $("[pos = '" + pos + "']").removeAttr('style');
+    $("[pos = '" + pos + "']").removeClass('maquinasDroppable');
     $("[pos = '" + pos + "']").addClass('maquinaSemDroppable');
     $("[pos = '" + pos + "']").attr('maq', maq);
     $("[pos = '" + pos + "']").append(responsew);
@@ -90,7 +91,7 @@ function dropMaquina(event, ui) {
         //Checa se Máquina não existe no dashboard.
         var checkMaquina = ui.draggable.attr('id');
 
-        var maquinaExistente = $("div [maq=" + checkMaquina + "]");
+        var maquinaExistente = $("[maq=" + checkMaquina + "]");
 
         //Se não existe adiciona máquina
         if (maquinaExistente.attr("maq") == undefined) {
@@ -100,6 +101,7 @@ function dropMaquina(event, ui) {
             $(this).droppable('disable');
             $(this).removeAttr('style');
             $(this).addClass('maquinaSemDroppable');
+            $(this).removeClass('maquinasDroppable');
             $(this).attr('maq', ui.draggable.attr('id'));
             $(this).append(responsew);
             ui.draggable.css("background-color", "#CCC123");
@@ -118,13 +120,15 @@ function dropMaquina(event, ui) {
         var responsew = GeradorDeMaquina("RetriveWebControl", ["id", ui.draggable.attr('idmaquina')]);
 
         var idmaq = ui.draggable.attr('idmaquina');
-        $('[idmaquina=' + idmaq + ']').parent().droppable('enable');
-        $('[idmaquina=' + idmaq + ']').parent().removeClass('maquinaSemDroppable');
-        $('[idmaquina=' + idmaq + ']').parent().addClass('maquinasDroppable');
-        $("div [maq=" + idmaq + "]").attr("maq", "");
+
+        $('[maq=' + idmaq + ']').removeAttr('style');
+        $('[maq=' + idmaq + ']').addClass('maquinasDroppable');
+        $('[maq=' + idmaq + ']').droppable('enable');
+        $("[maq=" + idmaq + "]").attr("maq", " ");
 
         $(this).droppable('disable');
         $(this).removeAttr('style');
+        $(this).removeClass('maquinasDroppable');
         $(this).addClass('maquinaSemDroppable');
         $(this).attr('maq', ui.draggable.attr('idmaquina'));
         $(this).append(responsew);
@@ -138,10 +142,10 @@ function dropMaquina(event, ui) {
 }
 function deletaMaquina(event, ui) {
     var idmaq = ui.draggable.attr('idmaquina');
-    $('[idmaquina=' + idmaq + ']').parent().droppable('enable');
-    $('[idmaquina=' + idmaq + ']').parent().removeClass('maquinaSemDroppable');
-    $('[idmaquina=' + idmaq + ']').parent().addClass('maquinasDroppable');
-    $("div [maq=" + idmaq + "]").attr("maq", "");
+    $('[maq=' + idmaq + ']').droppable('enable');
+    $('[maq=' + idmaq + ']').removeClass('maquinaSemDroppable');
+    $('[maq=' + idmaq + ']').addClass('maquinasDroppable');
+    $("[maq=" + idmaq + "]").attr("maq", "");
 
     ui.draggable.draggable('option', 'revert', false);
     ui.draggable.remove();

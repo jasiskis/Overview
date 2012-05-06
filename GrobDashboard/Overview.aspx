@@ -50,30 +50,35 @@
             
             <div id="contentCentral">
                 <div id="contentMaquinas">
-                        <div pos="1" maq="" class="maquinasDroppable"></div>
-                        <div pos="2" maq="" class="maquinasDroppable"></div>
-                        <div pos="3" maq="" class="maquinasDroppable"></div>
-                        <div pos="4" maq="" class="maquinasDroppable"></div>
-                        <div pos="5" maq="" class="maquinasDroppable"></div>
-                        <div pos="6" maq="" class="maquinasDroppable"></div>
-                        <div pos="7" maq="" class="maquinasDroppable"></div>
-                        <div pos="8" maq="" class="maquinasDroppable"></div>
-                        <div pos="9" maq="" class="maquinasDroppable"></div>
-                        <div pos="10" maq="" class="maquinasDroppable"></div>
-                        <div pos="11" maq="" class="maquinasDroppable"></div>
-                        <div pos="12" maq="" class="maquinasDroppable"></div>
-                        <div pos="13" maq="" class="maquinasDroppable"></div>
-                        <div pos="14" maq="" class="maquinasDroppable"></div>
-                        <div pos="15" maq="" class="maquinasDroppable"></div>
-                        <div pos="16" maq="" class="maquinasDroppable"></div>
-                        <div pos="17" maq="" class="maquinasDroppable"></div>
-                        <div pos="18" maq="" class="maquinasDroppable"></div>
-                        <div pos="19" maq="" class="maquinasDroppable"></div>
-                        <div pos="20" maq="" class="maquinasDroppable"></div>
-                        <div pos="21" maq="" class="maquinasDroppable"></div>
-                        <div pos="22" maq="" class="maquinasDroppable"></div>
-                        <div pos="23" maq="" class="maquinasDroppable"></div>
-                        <div class="trashCanDroppable"></div>                                                              
+                        <ul>
+                            <li pos="1" maq="" class="maquinasDroppable"><li>
+                            <li pos="2" maq="" class="maquinasDroppable"><li>
+                            <li pos="3" maq="" class="maquinasDroppable"><li>
+                            <li pos="4" maq="" class="maquinasDroppable"><li>
+                            <li pos="5" maq="" class="maquinasDroppable"><li>
+                            <li pos="6" maq="" class="maquinasDroppable"><li>
+                            <li pos="7" maq="" class="maquinasDroppable"><li>
+                            <li pos="8" maq="" class="maquinasDroppable"><li>
+                            <li pos="9" maq="" class="maquinasDroppable"><li>
+                            <li pos="10" maq="" class="maquinasDroppable"><li>
+                            <li pos="11" maq="" class="maquinasDroppable"><li>
+                            <li pos="12" maq="" class="maquinasDroppable"><li>
+                            <li pos="13" maq="" class="maquinasDroppable"><li>
+                            <li pos="14" maq="" class="maquinasDroppable"><li>
+                            <li pos="15" maq="" class="maquinasDroppable"><li>
+                            <li pos="16" maq="" class="maquinasDroppable"><li>
+                            <li pos="17" maq="" class="maquinasDroppable"><li>
+                            <li pos="18" maq="" class="maquinasDroppable"><li>
+                            <li pos="19" maq="" class="maquinasDroppable"><li>
+                            <li pos="20" maq="" class="maquinasDroppable"><li>
+                            <li pos="21" maq="" class="maquinasDroppable"><li>
+                            <li pos="22" maq="" class="maquinasDroppable"><li>
+                            <li pos="23" maq="" class="maquinasDroppable"><li>
+                            <li class="trashCanDroppable"></li>                                                      
+                        </ul>
+
+                    
+                        
                 </div>            
            </div>                           
         </div>

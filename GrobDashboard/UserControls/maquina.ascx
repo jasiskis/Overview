@@ -2,7 +2,7 @@
 <%@ Import Namespace="System.ComponentModel" %>
 
 <style>
-.containerMaquina{height: 170px;width: 170px; background-color: #333333;border:solid 3px white; border-radius: 20px; display: inline-table; margin: 5px;}
+.containerMaquina{height: 178px;width: 178px; background-color: #333333;border:solid 3px white; border-radius: 20px;}
 
 .imagemMaquina{text-align: center;}
 .imagemMaquina img 
@@ -33,7 +33,7 @@
     <div class="nomeMaquina"><asp:Label id="lblNomeMaquina" runat="server"></asp:Label></div>
 </div>
 
-<div id="dialog-maquina<%=IdMaquina%>" class="dialog-maquina" title="<%=NomeMaquina%>">
+<div id="dialog-maquina<%=IdMaquina%>" class="dialog-maquina" title="<%=NomeMaquina%> - <%=OMaquina.Desc%>">
     <div id="descMaquina" class="descMaquina">
          <asp:Repeater ID="infoMaq" runat="server">
             <ItemTemplate>

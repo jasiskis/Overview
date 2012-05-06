@@ -15,6 +15,7 @@ namespace GrobDashboard.UserControls
         public int IdMaquina { get; set; }
         public Maquina OMaquina { get; set;}
         
+        
 
         private GrobContext db = new GrobContext();
         
